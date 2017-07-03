@@ -15,13 +15,13 @@ class CollectionController extends Controller
     public function index()
     {
         //
-		$db = \DB::table("Collection");
+		$db = \DB::table("collection");
        
        //判断并封装搜索条件
        $params = array();
-       if(!empty($_GET['id'])){
-           $db->where("id","like","%{$_GET['id']}%");
-           $params['id'] = $_GET['id']; //维持搜索条件
+       if(!empty($_GET['userid'])){
+           $db->where("userid","like","%{$_GET['userid']}%");
+           $params['userid'] = $_GET['userid']; //维持搜索条件
        }
        
        // $list = $db->get(); //获取全部

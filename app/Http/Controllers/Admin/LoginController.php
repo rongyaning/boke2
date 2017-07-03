@@ -44,7 +44,7 @@ class LoginController extends Controller
        
    }
    
-    //加载验证码
+
    public function getCode()
    {
         $builder = new CaptchaBuilder();

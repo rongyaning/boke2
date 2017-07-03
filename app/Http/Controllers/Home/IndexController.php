@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 use App\Model\Article;
 use App\Model\Userinfo;
 use Illuminate\Http\Request;
+use App\Model\discusstab;
 use App\Http\Controllers\Controller;
 //use App\Http\Controllers\Home\userinfo;
 class IndexController extends Controller
@@ -18,8 +19,8 @@ class IndexController extends Controller
     {
 
         $art = Article::get();
-	
-		return view("home.index",['art'=>$art]);
+		$list = discusstab::get();
+		return view("home.index",['art'=>$art,'list'=>$list]);
 
     }
 

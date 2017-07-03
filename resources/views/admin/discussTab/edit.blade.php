@@ -26,7 +26,7 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-plus"></i> 编辑管理员信息</h3>
                 </div><!-- /.box-header -->
-				 <form class="form-horizontal" action="{{URL('admin/discusstab')}}/{{ $list->id }}" method="post">
+				 <form class="form-horizontal" action="{{URL('admin/discussTab')}}/{{ $list->id }}" method="post">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   <input type="hidden" name="_method" value="put">
                   <div class="box-body">

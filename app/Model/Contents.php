@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contents extends Model
 {
-    protected $table = 'contents';
+	//protected $table = 'article';
+   protected $table = 'contents';
+    
 }

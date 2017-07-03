@@ -18,7 +18,7 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-th"></i> 评论信息管理</h3>
                   <div class="box-tools">
-                    <form action="{{url('admin/discusstab')}}" method="get">
+                    <form action="{{url('admin/discussTab')}}" method="get">
                     <div class="input-group" style="width: 150px;">
                       <input type="text" name="articleid" class="form-control input-sm pull-right" placeholder="查找"/>
                       <div class="input-group-btn">
