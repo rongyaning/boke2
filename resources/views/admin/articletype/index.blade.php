@@ -43,7 +43,7 @@
                     @foreach($list as $v)
                     <tr>
                       <td>{{$v->id}}</td>
-                      <td>{{$v->title}}</td>
+                      <td>{{$v->name}}</td>
                       
                       <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
                      
@@ -78,7 +78,7 @@
       <script type="text/javascript">
             function doDel(id){
                 if(confirm('确定要删除吗？')){
-                    $("#mydeleteform").attr("action","{{url('admin/goods')}}/"+id).submit(); 
+                    $("#mydeleteform").attr("action","{{url('admin/articletype')}}/"+id).submit(); 
                 }
             }
       </script>

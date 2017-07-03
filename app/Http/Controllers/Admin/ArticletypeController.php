@@ -16,7 +16,14 @@ class ArticletypeController extends Controller
      */
     public function index()
     {
-        $list = Articletype::get();
+        //$list = Articletype::get();
+        $list = \DB::select("select * from Articletype order by concat(path,id) asc");
+        //处理信息
+        foreach($list as &$v){
+            $m = substr_count($v->path,","); //获取path中的逗号
+            //生成缩进
+            $v->name = str_repeat("&nbsp;",($m-1)*8)."|--".$v->name;
+        }
         
         return view("admin.Articletype.index",['list'=>$list]);
     }
@@ -28,10 +35,7 @@ class ArticletypeController extends Controller
      */
     public function create()
     {
-        $db = new Articletype;
-        //$list = $db->select("select * from Articletype order by concat(path,id) asc");
-        $list=$db->orderby('path',"asc");
-       
+        $list = \DB::select("select * from Articletype order by concat(path,id) asc");
         //处理信息
         foreach($list as &$v){
             $m = substr_count($v->path,","); //获取path中的逗号
@@ -56,7 +60,7 @@ class ArticletypeController extends Controller
         if($pid==0){
             $data['path']="0,";
         }else{
-            $db->where("id",$pid)->first();
+            $type=$db->where("id",$pid)->first();
             $data['path'] = $type->path.$pid.",";
         }
         

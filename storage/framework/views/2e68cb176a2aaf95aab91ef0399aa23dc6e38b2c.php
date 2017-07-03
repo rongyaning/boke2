@@ -3,7 +3,7 @@
 <html lang="zh-cn">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script async="" src="{{asset('js/analytics.js')}}"></script>
+    <script async="" src="<?php echo e(asset('js/analytics.js')); ?>"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>博客园 - 开发者的网上家园</title>
@@ -11,11 +11,11 @@
     <meta name="description"
           content="博客园是一个面向开发者的知识分享社区。自创建以来，博客园一直致力并专注于为开发者打造一个纯净的技术交流社区，推动并帮助开发者通过互联网分享知识，从而让更多开发者从中受益。博客园的使命是帮助开发者用代码改变世界。">
     <link rel="shortcut icon" href="https://common.cnblogs.com/favicon.ico" type="image/x-icon">
-    <link rel="Stylesheet" type="text/css" href="{{asset('css/aggsite.css')}}">
+    <link rel="Stylesheet" type="text/css" href="<?php echo e(asset('css/aggsite.css')); ?>">
     <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate"
           href="http://feed.cnblogs.com/blog/sitehome/rss">
-    <script src="{{asset('js/jquery.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/aggsite.js')}}" type="text/javascript"></script>
+    <script src="<?php echo e(asset('js/jquery.js')); ?>" type="text/javascript"></script>
+    <script src="<?php echo e(asset('js/aggsite.js')); ?>" type="text/javascript"></script>
 </head>
 <body>
 
@@ -24,7 +24,7 @@
             <div id="cnts">
                 <div id="site_nav_top">代码改变世界</div>
                 <div id="login_area">
-                    <span id="span_userinfo">[<a href="{{URL('home/login')}}">登录</a>·<a href="https://www.cnblogs.com/#" onclick="register();return false">注册</a>]</span>
+                    <span id="span_userinfo">[<a href="<?php echo e(URL('home/login')); ?>">登录</a>·<a href="https://www.cnblogs.com/#" onclick="register();return false">注册</a>]</span>
                 </div>
                 
                 <div class="clear"></div>
@@ -42,7 +42,7 @@
         <div id="header_block">
             <div id="logo">
                 <h1>
-                    <a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="{{asset('imges/logo_small.gif')}}"
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="<?php echo e(asset('imges/logo_small.gif')); ?>"
                                                                              alt="博客园Logo" width="142" height="55"></a>
                 </h1>
             </div>
@@ -70,7 +70,7 @@
             <span id="posts_refresh_tips"></span>
             <a id="posts_refresh" href="https://www.cnblogs.com/#" class="refresh" title="刷新博文列表" onclick="aggSite.loadCategoryPostList();return false">刷新</a> 
             <a  href="http://feed.cnblogs.com/blog/sitehome/rss">
-            <img src="{{asset('imges/icon_rss.gif')}}" alt="点击订阅" style="position:relative;top:2px;" title="订阅博客园文章"></a>
+            <img src="<?php echo e(asset('imges/icon_rss.gif')); ?>" alt="点击订阅" style="position:relative;top:2px;" title="订阅博客园文章"></a>
         </div>
        
 
@@ -79,26 +79,27 @@
         <div id="post_list_tips" class="hide"></div>
 
         <div id="post_list">
-              @foreach ($art as $v)
+              <?php $__currentLoopData = $art; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="post_item_body">
-                    <h3><a class="titlelnk" href="http://www.cnblogs.com/onepixel/p/7078617.html" target="_blank">{{$v->title}}</a></h3>
+                    <h3><a class="titlelnk" href="http://www.cnblogs.com/onepixel/p/7078617.html" target="_blank"><?php echo e($v->title); ?></a></h3>
                     <p class="post_item_summary">
                         <a href="http://www.cnblogs.com/onepixel/" target="_blank">
-                        <img width="48" height="48" class="pfs" src="{{asset('imges/20151205235751.png')}}" alt=""></a>
+                        <img width="48" height="48" class="pfs" src="<?php echo e(asset('imges/20151205235751.png')); ?>" alt=""></a>
                         
                     </p>
                     <div class="post_item_foot">
-                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue">{{$v->author}}</a>
-                        发布于 {{$v->addtime}}
+                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue"><?php echo e($v->author); ?></a>
+                        发布于 <?php echo e($v->addtime); ?>
+
                         <span class="article_comment"><a
                                 href="http://www.cnblogs.com/onepixel/p/7078617.html#commentform" title="" class="gray">
-                       {{$v->author}}</a></span><span class="article_view"></span>
-					   <a href="{{url('/home/discusstab')}}">评论</a>
+                       <?php echo e($v->author); ?></a></span><span class="article_view"></span>
+					   <a href="<?php echo e(url('/home/discusstab')); ?>">评论</a>
 					   </div>
                 </div>
                 <div class="clear"></div>
             </div>
-          @endforeach
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
             
 
@@ -410,9 +411,9 @@
         <div>
             <a href="https://ss.knet.cn/verifyseal.dll?sn=e131108110100433392itm000000&amp;ct=df&amp;a=1&amp;pa=0.25787803245785335"
                rel="nofollow" target="_blank" >
-                <img id="cnnic_img" src="{{asset('imges/cnnic.png')}}" alt="" width="64" height="23"></a>
+                <img id="cnnic_img" src="<?php echo e(asset('imges/cnnic.png')); ?>" alt="" width="64" height="23"></a>
             <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502001144" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
-                <img src="{{asset('imges/ghs.png')}}" alt=""><span style="float:left;height:20px;line-height:20px;margin: 0 5px 0 5px; color:#939393;">沪公网安备 31011502001144号</span></a>
+                <img src="<?php echo e(asset('imges/ghs.png')); ?>" alt=""><span style="float:left;height:20px;line-height:20px;margin: 0 5px 0 5px; color:#939393;">沪公网安备 31011502001144号</span></a>
         </div>
     </div>
 </div>

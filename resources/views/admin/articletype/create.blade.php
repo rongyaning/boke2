@@ -6,7 +6,7 @@
         <section class="content-header">
           <h1>
             <i class="fa fa-calendar"></i>
-			角色信息管理
+			文章分类管理
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
@@ -23,7 +23,7 @@
               <!-- Horizontal Form -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title"><i class="fa fa-plus"></i> 添加管理员</h3>
+                  <h3 class="box-title"><i class="fa fa-plus"></i> 添加类别</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
                 <form class="form-horizontal" action="{{URL('admin/articletype')}}" method="post">
@@ -40,7 +40,8 @@
                       <label for="inputEmail3" class="col-sm-2 control-label">父类别</label>
                       <div class="col-sm-4" >
                       <select name="pid">
-                        <option value="0">/</option>
+                        <option value="0"><span>&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;/&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;</span></option>
+                        
                         @foreach($list as $v)
                             <option value="{{$v->id}}">{{$v->name}}</option>
                         @endforeach
