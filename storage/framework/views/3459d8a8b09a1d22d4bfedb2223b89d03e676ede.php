@@ -36,17 +36,17 @@
 		<meta name="csrf-param" content="authenticity_token">
 		<meta name="csrf-token" content="VpSCKMTYqyfu3sizLy+c7uj8mc4ogrQtC0A2FWP/CcjjnJfQPhm2IoOPnSzjxAy1lUgL1r9IeRJy+vvOWHNwkA==">
 
-		<link rel="stylesheet" media="all" href="{{asset('homes/css/web-15ab19cc7f510036f39f.css')}}">
+		<link rel="stylesheet" media="all" href="<?php echo e(asset('homes/css/web-15ab19cc7f510036f39f.css')); ?>">
 	  
-		<link rel="stylesheet" media="all" href="{{asset('homes/css/entry-15ab19cc7f510036f39f.css')}}">
+		<link rel="stylesheet" media="all" href="<?php echo e(asset('homes/css/entry-15ab19cc7f510036f39f.css')); ?>">
 
 		<link href="http://cdn2.jianshu.io/assets/favicons/favicon-783beb88ed621ceab614de960376ac0c.ico" rel="icon">
-		<link rel="apple-touch-icon-precomposed" href="{{asset('homes/images/57-47624b2e2161e8eb144462c85db0a5ff.png')}}" sizes="57x57">
-		<link rel="apple-touch-icon-precomposed" href="{{asset('homes/images/72-c00cde7cf98fc49e50cbb3ee1dcd5804.png')}}" sizes="72x72">
-		<link rel="apple-touch-icon-precomposed" href="{{asset('homes/images/76-e8af0bdeaf1ba31e303b1fde8b5e66c4.png')}}" sizes="76x76">
-		<link rel="apple-touch-icon-precomposed" href="{{asset('homes/images/114-f4c78569bbf1977e8382a5fd90c9237a.png')}}" sizes="114x114">
-		<link rel="apple-touch-icon-precomposed" href="{{asset('homes/images/120-cf10c3711dba269522743729efe66bbc.png')}}" sizes="120x120">
-		<link rel="apple-touch-icon-precomposed" href="{{asset('homes/images/152-7bd60457b5f3ecbf1343f0e6241be4f8.png')}}" sizes="152x152">
+		<link rel="apple-touch-icon-precomposed" href="<?php echo e(asset('homes/images/57-47624b2e2161e8eb144462c85db0a5ff.png')); ?>" sizes="57x57">
+		<link rel="apple-touch-icon-precomposed" href="<?php echo e(asset('homes/images/72-c00cde7cf98fc49e50cbb3ee1dcd5804.png')); ?>" sizes="72x72">
+		<link rel="apple-touch-icon-precomposed" href="<?php echo e(asset('homes/images/76-e8af0bdeaf1ba31e303b1fde8b5e66c4.png')); ?>" sizes="76x76">
+		<link rel="apple-touch-icon-precomposed" href="<?php echo e(asset('homes/images/114-f4c78569bbf1977e8382a5fd90c9237a.png')); ?>" sizes="114x114">
+		<link rel="apple-touch-icon-precomposed" href="<?php echo e(asset('homes/images/120-cf10c3711dba269522743729efe66bbc.png')); ?>" sizes="120x120">
+		<link rel="apple-touch-icon-precomposed" href="<?php echo e(asset('homes/images/152-7bd60457b5f3ecbf1343f0e6241be4f8.png')); ?>" sizes="152x152">
 		<link rel="stylesheet" href="blob:http://www.jianshu.com/ba08ed26-92d9-425c-9daa-8e9426b5b812"></head>
 
 	<body lang="zh-CN" class="reader-black-font" style="overflow-y: scroll;">
@@ -54,17 +54,17 @@
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="width-limit">
 		<!-- 左上方 Logo -->
-			<a class="logo" href="{{url('home')}}"><img src="{{asset('imges/logo_small.gif')}}" alt="Logo"></a>
+			<a class="logo" href="<?php echo e(url('home')); ?>"><img src="<?php echo e(asset('imges/logo_small.gif')); ?>" alt="Logo"></a>
 
 			<!-- 右上角 -->
 			<!-- 登录显示写文章 -->
-			<a class="btn write-btn" target="_blank" href="{{url('home/lists')}}">
+			<a class="btn write-btn" target="_blank" href="<?php echo e(url('home/lists')); ?>">
 			<i class="iconfont ic-write"></i>我的博客</a>
 
 		<!-- 如果用户登录，显示下拉菜单 -->
 			<div class="user">
 				<div data-hover="dropdown">
-					<a class="avatar" href="http://www.jianshu.com/u/ebd83d2a2318"><img src="{{asset('homes/images/15-a7ac401939dd4df837e3bbf82abaa2a8.jpg')}}" alt="120"></a>
+					<a class="avatar" href="http://www.jianshu.com/u/ebd83d2a2318"><img src="<?php echo e(asset('homes/images/15-a7ac401939dd4df837e3bbf82abaa2a8.jpg')); ?>" alt="120"></a>
 				</div>
 				<ul class="dropdown-menu">
 					<li>
@@ -104,7 +104,7 @@
 				<div class="collapse navbar-collapse" id="menu">
 					<ul class="nav navbar-nav">
 						<li class="">
-						<a href="{{url('home')}}">
+						<a href="<?php echo e(url('home')); ?>">
 						<span class="menu-text">首页</span>
 						<i class="iconfont ic-navigation-discover menu-icon"></i>
 						</a>            
@@ -152,8 +152,8 @@
 				</ul>
 			</div> 
 			
-			<form class="form-horizontal" action="{{URL('home/personal/create')}}" method="post">
-                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+			<form class="form-horizontal" action="<?php echo e(URL('home/personal/create')); ?>" method="post">
+                  <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                   <input type="hidden" name="_method" value="put">
 			<div class="col-xs-16 col-xs-offset-8 main">
 				<table>
@@ -165,11 +165,11 @@
 					</thead> 
 					<tbody class="base">
 				
-				@foreach($list as $v)
+				<?php $__currentLoopData = $list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 				<tr>
 					<td class="top-line">
 						<div class="avatar">
-							<img src="{{asset('homes/images/15-a7ac401939dd4df837e3bbf82abaa2a8(1).jpg')}}">
+							<img src="<?php echo e(asset('homes/images/15-a7ac401939dd4df837e3bbf82abaa2a8(1).jpg')); ?>">
 						</div>
 					</td> 
 					<td class="top-line">
@@ -184,7 +184,7 @@
             
 					<td>
 						
-						<input type="text" value="{{$v->uname}}">
+						<input type="text" value="<?php echo e($v->uname); ?>">
 						
 					</td>
 				</tr> 
@@ -193,7 +193,7 @@
 					<td>
 						
 							<!--<input type="button" value="发送" class="btn btn-hollow pull-right">-->
-							<input type="email" value="{{$v->email}}">
+							<input type="email" value="<?php echo e($v->email); ?>">
 						
 					</td>
 				</tr> 
@@ -209,42 +209,42 @@
 				<tr>
 					<td class="setting-title">年龄</td> 
 					<td>
-						<input type="text" value="{{$v->age}}">
+						<input type="text" value="<?php echo e($v->age); ?>">
 					</td>
 				</tr> 
 				<tr>
 					<td class="setting-title">性别</td> 
 					<td>
-						<input type="text" value="{{$v->sex}}">
+						<input type="text" value="<?php echo e($v->sex); ?>">
 					</td>
 				</tr> 
-				@endforeach
+				<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 				
 				</tbody>
 				</table> 
 				
 			    <input type="submit" class="btn btn-success setting-save" value="保存">
 			    <!--<button type="submit" class="btn btn-success setting-save">保存</button>-->
-				<!--<button class="btn btn-success setting-save" onclick="window.location='{{URL('admin/personal')}}/{{ $v->id }}/edit'">编辑</button>--><!----> <!---->
+				<!--<button class="btn btn-success setting-save" onclick="window.location='<?php echo e(URL('admin/personal')); ?>/<?php echo e($v->id); ?>/edit'">编辑</button>--><!----> <!---->
 			</div>
 			</form>
 
 		</div>
 	</d
 
-    <script src="{{asset('homes/js/push.js')}}"></script>
-	<script src="{{asset('homes/js/hm.js')}}"></script>
-	<script async="" src="{{asset('homes/js/analytics')}}"></script>
+    <script src="<?php echo e(asset('homes/js/push.js')); ?>"></script>
+	<script src="<?php echo e(asset('homes/js/hm.js')); ?>"></script>
+	<script async="" src="<?php echo e(asset('homes/js/analytics')); ?>"></script>
 	<script type="application/json" data-name="page-data">
 		{"user_signed_in":true,"locale":"zh-CN","os":"windows","read_mode":"day","read_font":"font2","current_user":{"id":6659302,"nickname":"我不吃牛羊肉","slug":"ebd83d2a2318","avatar":"http://cdn2.jianshu.io/assets/default_avatar/15-a7ac401939dd4df837e3bbf82abaa2a8.jpg","unread_counts":{"total":null}}}
 	</script>
     
-    <script src="{{asset('homes/js/babel-polyfill-f2c0b85b9d0fcc12d94a.js')}}"></script>
-    <script src="{{asset('homes/js/web-base-15ab19cc7f510036f39f.js')}}"></script>
-	<script src="{{asset('homes/js/web-afdc6659222ac7cf225f.js')}}"></script>
-    <script src="{{asset('homes/js/jquery-fileupload-1ff2f3d611bfbed6f0b71a6f78205a88.js')}}"></script>
+    <script src="<?php echo e(asset('homes/js/babel-polyfill-f2c0b85b9d0fcc12d94a.js')); ?>"></script>
+    <script src="<?php echo e(asset('homes/js/web-base-15ab19cc7f510036f39f.js')); ?>"></script>
+	<script src="<?php echo e(asset('homes/js/web-afdc6659222ac7cf225f.js')); ?>"></script>
+    <script src="<?php echo e(asset('homes/js/jquery-fileupload-1ff2f3d611bfbed6f0b71a6f78205a88.js')); ?>"></script>
 
-    <script src="{{asset('homes/js/entry-0712bd0f7f33bfc50976.js')}}"></script>
+    <script src="<?php echo e(asset('homes/js/entry-0712bd0f7f33bfc50976.js')); ?>"></script>
     <script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

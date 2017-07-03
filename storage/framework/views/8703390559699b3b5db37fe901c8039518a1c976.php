@@ -1,5 +1,4 @@
-@extends('admin.base')
-    @section('content')
+    <?php $__env->startSection('content'); ?>
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
@@ -21,7 +20,7 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-th"></i> 文章信息</h3>
                   <div class="box-tools">
-                    <form action="{{url('admin/article')}}" method="get">
+                    <form action="<?php echo e(url('admin/article')); ?>" method="get">
                     <div class="input-group" style="width: 150px;">
                       <input type="text" name="author" class="form-control input-sm pull-right" placeholder="作者"/>
                       <div class="input-group-btn">
@@ -45,29 +44,30 @@
                       <th>状态</th>
                       <th>操作</th>
                     </tr>
-                    @foreach($list as $v)
+                    <?php $__currentLoopData = $list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                      <td>{{$v->id}}</td>
-                      <td>{{$v->userid}}</td>
-                      <td>{{$v->cid}}</td>
-                      <td>{{$v->title}}</td>
-                      <td>{{$v->author}}</td>
-                      <td>{{$v->picname}}</td>
-                      <td>{{$v->articleType}}</td>
-                      <td>{{$v->addtime}}</td>
-                      <td class="btn btn-primary btn-xs">@if ($v->status=='1')已通过 @elseif ($v->status=='2')未通过 @else ($v->status=='3')待审核 @endif</td>
+                      <td><?php echo e($v->id); ?></td>
+                      <td><?php echo e($v->userid); ?></td>
+                      <td><?php echo e($v->cid); ?></td>
+                      <td><?php echo e($v->title); ?></td>
+                      <td><?php echo e($v->author); ?></td>
+                      <td><?php echo e($v->picname); ?></td>
+                      <td><?php echo e($v->articleType); ?></td>
+                      <td><?php echo e($v->addtime); ?></td>
+                      <td class="btn btn-primary btn-xs"><?php if($v->status=='1'): ?>已通过 <?php elseif($v->status=='2'): ?>未通过 <?php else: ?>待审核 <?php endif; ?></td>
         
-                      <td><a href = 'delete/{{ $v->id }}' class="btn btn-xs btn-danger">删除</a> 
-                      <button class="btn btn-xs btn-primary" onclick="window.location='{{URL('/admin/contents')}}'">查看内容详情</button> 
+                      <td><a href = 'delete/<?php echo e($v->id); ?>' class="btn btn-xs btn-danger">删除</a> 
+                      <button class="btn btn-xs btn-primary" onclick="window.location='<?php echo e(URL('/admin/contents')); ?>'">查看内容详情</button> 
                       </td>
                     </tr>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   
                    
                   </table>
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
-                  {!! $list->appends($params)->render() !!}
+                  <?php echo $list->appends($params)->render(); ?>
+
                 </div>
               </div><!-- /.box -->
 
@@ -82,5 +82,6 @@
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <input type="hidden" name="_method" value="DELETE">
         </form>
-    @endsection
+    <?php $__env->stopSection(); ?>
     
+<?php echo $__env->make('admin.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
