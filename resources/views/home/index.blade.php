@@ -99,7 +99,7 @@
                        {{$v->author}}</a></span><span class="article_view"></span>
 					   
 
-                       </a></span><span class="article_view"></span>
+                       </a></span><span class="article_view"></span> 
 					   @endforeach
 					   
 					   <a href="{{url('/home/discusstab')}}">评论</a>
