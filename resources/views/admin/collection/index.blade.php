@@ -18,9 +18,9 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-th"></i>收藏信息管理</h3>
                   <div class="box-tools">
-                     <form action="{{url('admin/collection')}}" method="post">
+                   <form action="{{url('admin/collection')}}" method="get">
                     <div class="input-group" style="width: 150px;">
-                      <input type="text" name="id" class="form-control input-sm pull-right" placeholder="查找"/>
+                      <input type="text" name="userid" class="form-control input-sm pull-right" placeholder="查找"/>
                       <div class="input-group-btn">
                         <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                       </div>
@@ -34,6 +34,7 @@
 						<th>id</th>
                       <th>用户id</th>
                       <th>文章id</th> 
+                       
 				
                       <th style="width: 100px">操作</th>
                     </tr>
@@ -42,6 +43,7 @@
                       <td>{{$v->id}}</td>
                       <td>{{$v->userid}}</td>	
                       <td>{{$v->ArticleId}}</td> 
+                      
 									  
 					   <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
                      <button class="btn btn-xs btn-primary" onclick="window.location='{{URL('admin/collection')}}/{{ $v->id }}/edit'">编辑</button> </td>

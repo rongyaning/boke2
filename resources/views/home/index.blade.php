@@ -29,8 +29,8 @@
 			<span id="span_userinfo"><a href=""></a>
         
 			<a id="user_nav_blog_link" href="http://www.cnblogs.com/ryn521/">我的博客</a>	
-			<span id="user_nav_blog_split">·</span><a href="http://msg.cnblogs.com/">短消息
-			<span id="msg_count"></span></a>·<a href="http://home.cnblogs.com/set/">设置</a>·
+			<span id="user_nav_blog_split">·</span><a href="{{url('home/user')}}">注册
+			<span id="msg_count"></span></a>·<a href="http://home.cnblogs.com/set/">登录</a>·
 			<a href="/home" onclick="logout();return false">退出</a>
 			<span id="current_spaceId" style="display:none">1187366</span></span></div>
 			
@@ -96,15 +96,20 @@
                         
                     </p>
                     <div class="post_item_foot">
-                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue">{{$v->author}}</a>
-                        发布于 {{$v->addtime}}
+                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue">作者:{{$v->author}}</a>
+                        发布于:{{$v->addtime}}
                         <span class="article_comment"><a
                                 href="http://www.cnblogs.com/onepixel/p/7078617.html#commentform" title="" class="gray">
-                       {{$v->author}}</a></span><span class="article_view"></span></div>
+                       </a></span><span class="article_view"></span>
+					   @endforeach
+					   
+					   <a href="{{url('/home/discusstab')}}">评论</a>
+					    
+					   </div>
                 </div>
                 <div class="clear"></div>
             </div>
-          @endforeach
+      
 
         </div>
         <script>editorPickStat();

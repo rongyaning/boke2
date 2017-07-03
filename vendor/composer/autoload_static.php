@@ -74,6 +74,10 @@ class ComposerStaticInit8916bccc7654ffc7b88227e9d4e72b00
         array (
             'Illuminate\\' => 11,
         ),
+        'G' => 
+        array (
+            'Gregwar\\Captcha\\' => 16,
+        ),
         'F' => 
         array (
             'Faker\\' => 6,
@@ -202,6 +206,10 @@ class ComposerStaticInit8916bccc7654ffc7b88227e9d4e72b00
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
+        'Gregwar\\Captcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gregwar/captcha',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
@@ -274,16 +282,44 @@ class ComposerStaticInit8916bccc7654ffc7b88227e9d4e72b00
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\AdminerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminerController.php',
+        'App\\Http\\Controllers\\Admin\\ArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ArticleController.php',
+        'App\\Http\\Controllers\\Admin\\ArticletypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ArticletypeController.php',
+        'App\\Http\\Controllers\\Admin\\CollectionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CollectionController.php',
+        'App\\Http\\Controllers\\Admin\\ContentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ContentsController.php',
+        'App\\Http\\Controllers\\Admin\\DiscussTabController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DiscussTabController.php',
+        'App\\Http\\Controllers\\Admin\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/IndexController.php',
+        'App\\Http\\Controllers\\Admin\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/LoginController.php',
+        'App\\Http\\Controllers\\Admin\\UserinfoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserinfoController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Home\\DetailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/DetailController.php',
+        'App\\Http\\Controllers\\Home\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/IndexController.php',
+        'App\\Http\\Controllers\\Home\\ListController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/ListController.php',
+        'App\\Http\\Controllers\\Home\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/LoginController.php',
+        'App\\Http\\Controllers\\Home\\PersonalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/PersonalController.php',
+        'App\\Http\\Controllers\\Home\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/RegisterController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\AdminMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/AdminMiddleware.php',
+        'App\\Http\\Middleware\\CheckAge' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckAge.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\HomeMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/HomeMiddleware.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Model\\Adminer' => __DIR__ . '/../..' . '/app/Model/Adminer.php',
+        'App\\Model\\Article' => __DIR__ . '/../..' . '/app/Model/Article.php',
+        'App\\Model\\Article_discusstab' => __DIR__ . '/../..' . '/app/Model/Article_discusstab.php',
+        'App\\Model\\Articletype' => __DIR__ . '/../..' . '/app/Model/Articletype.php',
+        'App\\Model\\Collection' => __DIR__ . '/../..' . '/app/Model/Collection.php',
+        'App\\Model\\Contents' => __DIR__ . '/../..' . '/app/Model/Contents.php',
+        'App\\Model\\Discusstab' => __DIR__ . '/../..' . '/app/Model/Discusstab.php',
+        'App\\Model\\Log' => __DIR__ . '/../..' . '/app/Model/Log.php',
+        'App\\Model\\User' => __DIR__ . '/../..' . '/app/Model/User.php',
+        'App\\Model\\Userinfo' => __DIR__ . '/../..' . '/app/Model/Userinfo.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -743,6 +779,11 @@ class ComposerStaticInit8916bccc7654ffc7b88227e9d4e72b00
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'Gregwar\\Captcha\\CaptchaBuilder' => __DIR__ . '/..' . '/gregwar/captcha/CaptchaBuilder.php',
+        'Gregwar\\Captcha\\CaptchaBuilderInterface' => __DIR__ . '/..' . '/gregwar/captcha/CaptchaBuilderInterface.php',
+        'Gregwar\\Captcha\\ImageFileHandler' => __DIR__ . '/..' . '/gregwar/captcha/ImageFileHandler.php',
+        'Gregwar\\Captcha\\PhraseBuilder' => __DIR__ . '/..' . '/gregwar/captcha/PhraseBuilder.php',
+        'Gregwar\\Captcha\\PhraseBuilderInterface' => __DIR__ . '/..' . '/gregwar/captcha/PhraseBuilderInterface.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',

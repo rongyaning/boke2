@@ -16,9 +16,9 @@ class DiscussTabController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 	
         //
-		$db = \DB::table("Discusstab");
+		$db = \DB::table("discusstab");
        
        //判断并封装搜索条件
        $params = array();
@@ -49,9 +49,9 @@ class DiscussTabController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) 
     {
-        //
+        
     }
 
     /**
@@ -75,8 +75,8 @@ class DiscussTabController extends Controller
     {
         //
 		
-		$list = Discusstab::where('id',$id)->first(); //获取信息
-			return view("admin.discusstab.edit",["list"=>$list]);
+				$list = discusstab::where('id',$id)->first(); //获取信息
+				return view("admin.discusstab.edit",["list"=>$list]);
 		
     }
 
@@ -93,10 +93,10 @@ class DiscussTabController extends Controller
 		
         $data = $request->only("status");
         
-        $id = \DB::table("discusstab")->where("id",$id)->update($data);
+        $id = \DB::table("discussTab")->where("id",$id)->update($data);
         
         if($id>0){
-            return redirect('admin/discusstab');
+            return redirect('admin/discussTab');
         }else{
             return back()->with("err","修改失败!");
         }
