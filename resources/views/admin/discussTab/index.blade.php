@@ -76,7 +76,7 @@
     
     
     
-        @section("myscript")
+    @section("myscript")
       <script type="text/javascript">
             function doDel(id){
                 if(confirm('确定要删除吗？')){

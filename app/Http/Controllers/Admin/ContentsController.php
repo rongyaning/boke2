@@ -16,8 +16,7 @@ class ContentsController extends Controller
     public function index()
     {
         //
-        $list = Contents::get();
-        return view("admin.Contents.index",["list"=>$list]);
+    
     }
 
     /**

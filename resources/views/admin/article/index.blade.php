@@ -55,10 +55,10 @@
                       <td>{{$v->picname}}</td>
                       <td>{{$v->articleType}}</td>
                       <td>{{$v->addtime}}</td>
-                      <td class="btn btn-primary btn-xs">@if ($v->status=='1')已通过 @elseif ($v->status=='2')未通过 @else ($v->status=='3')待审核 @endif</td>
+                      <td class="btn btn-primary btn-xs">@if ($v->status=='0')已通过 @elseif ($v->status=='1')未通过 @else ($v->status=='2')待审核 @endif</td>
         
-                      <td><a href = 'delete/{{ $v->id }}' class="btn btn-xs btn-danger">删除</a> 
-                      <button class="btn btn-xs btn-primary" onclick="window.location='{{URL('/admin/contents')}}'">查看内容详情</button> 
+                      <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button>
+                      <button class="btn btn-xs btn-primary" onclick="window.location='{{URL('admin/article')}}/{{$v->cid}}/edit'">查看内容详情</button> 
                       </td>
                     </tr>
                     @endforeach
@@ -84,3 +84,15 @@
         </form>
     @endsection
     
+
+
+
+     @section("myscript")
+      <script type="text/javascript">
+            function doDel(id){
+                if(confirm('确定要删除吗？')){
+                    $("#mydeleteform").attr("action","{{url('admin/article')}}/"+id).submit(); 
+                }
+            }
+      </script>
+    @endsection

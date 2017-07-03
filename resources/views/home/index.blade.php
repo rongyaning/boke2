@@ -28,7 +28,7 @@
          
 			<span id="span_userinfo"><a href=""></a>
         
-			<a id="user_nav_blog_link" href="http://www.cnblogs.com/ryn521/">我的博客</a>	
+			<a id="user_nav_blog_link" href="{{url('home/list')}}">我的博客</a>	
 			<span id="user_nav_blog_split">·</span><a href="http://msg.cnblogs.com/">短消息
 			<span id="msg_count"></span></a>·<a href="http://home.cnblogs.com/set/">设置</a>·
 			<a href="/home" onclick="logout();return false">退出</a>
