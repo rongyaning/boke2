@@ -19,6 +19,7 @@
 </head>
 <body>
 
+
     <div id="wrapper">
         <div id="hd_info">
             <div id="cnts">
@@ -31,6 +32,7 @@
                 
             </div>
         </div> 
+
     </div>
     
     
@@ -87,18 +89,27 @@
                         <img width="48" height="48" class="pfs" src="{{asset('imges/20151205235751.png')}}" alt=""></a>
                         
                     </p>
+                    
                     <div class="post_item_foot">
-                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue">{{$v->author}}</a>
-                        发布于 {{$v->addtime}}
+                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue">作者:{{$v->author}}</a>
+                        发布于:{{$v->addtime}}
                         <span class="article_comment"><a
                                 href="http://www.cnblogs.com/onepixel/p/7078617.html#commentform" title="" class="gray">
+
                        {{$v->author}}</a></span><span class="article_view"></span>
+					   
+
+                       </a></span><span class="article_view"></span>
+					   @endforeach
+					   
 					   <a href="{{url('/home/discusstab')}}">评论</a>
+					    
+
 					   </div>
                 </div>
                 <div class="clear"></div>
             </div>
-          @endforeach
+      
 
             
 

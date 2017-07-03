@@ -44,7 +44,7 @@ class LoginController extends Controller
        
    }
    
-  /*  //加载验证码
+
    public function getCode()
    {
         $builder = new CaptchaBuilder();
@@ -52,7 +52,7 @@ class LoginController extends Controller
         \Session::put('phrase',$builder->getPhrase()); //存储验证码
         return response($builder->output())->header('Content-type','image/jpeg');
    }
- */
+ 
    //执行退出
    public function logout(Request $request)
    {

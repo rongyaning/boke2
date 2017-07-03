@@ -26,7 +26,7 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-plus"></i> 编辑管理员信息</h3>
                 </div><!-- /.box-header -->
-				 <form class="form-horizontal" action="{{URL('admin/discusstab')}}/{{ $list->id }}" method="post">
+				 <form class="form-horizontal" action="{{URL('admin/discussTab')}}/{{ $list->id }}" method="post">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   <input type="hidden" name="_method" value="put">
                   <div class="box-body">
@@ -51,12 +51,12 @@
                     </div>	
 					<div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">状态</label>
-                      <div class="col-sm-4">
+                      <!--<div class="col-sm-4">
                         <input type="radio" name="status"  value="1"<?php echo $list['status']=="1"?"checked":"";?>/>待审核
                         <input type="radio" name="status"  value="2"<?php echo $list['status']=="2"?"checked":"";?>/>通过
                         <input type="radio" name="status"  value="3"<?php echo $list['status']=="3"?"checked":"";?>/>未通过
-                      </div>
-                    </div>
+                      </div>-->
+          </div>
                   </div><!-- /.box-body -->
                   <div class="box-footer">
 				    <div class="col-sm-offset-2 col-sm-1">
