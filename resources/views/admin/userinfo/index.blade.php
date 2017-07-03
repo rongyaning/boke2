@@ -49,21 +49,15 @@
                       
                       <td>{{$v->email}}</td>
                       <td>{{$v->enrolltime}}</td>
-                      <!--<td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
-                      <button class="btn btn-xs btn-primary">编辑</button> </td>-->
+                      
+                      <!--<td><button class="btn btn-xs btn-primary" onclick="window.location='{{URL('admin/userinfo')}}/{{ $v->id }}/edit'">编辑</button> </td>>-->
                     </tr>
                     @endforeach
                    
                   </table>
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
-                  <ul class="pagination pagination-sm no-margin pull-right">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                  </ul>
+                   {!! $list->render() !!}
                 </div>
 
               </div><!-- /.box -->

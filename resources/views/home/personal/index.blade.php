@@ -54,12 +54,12 @@
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="width-limit">
 		<!-- 左上方 Logo -->
-			<a class="logo" href="http://www.jianshu.com/"><img src="{{asset('homes/images/logo-58fd04f6f0de908401aa561cda6a0688.png')}}" alt="Logo"></a>
+			<a class="logo" href="{{url('home')}}"><img src="{{asset('imges/logo_small.gif')}}" alt="Logo"></a>
 
 			<!-- 右上角 -->
 			<!-- 登录显示写文章 -->
-			<a class="btn write-btn" target="_blank" href="http://www.jianshu.com/writer#/">
-			<i class="iconfont ic-write"></i>写文章</a>
+			<a class="btn write-btn" target="_blank" href="{{url('home/lists')}}">
+			<i class="iconfont ic-write"></i>我的博客</a>
 
 		<!-- 如果用户登录，显示下拉菜单 -->
 			<div class="user">
@@ -104,16 +104,16 @@
 				<div class="collapse navbar-collapse" id="menu">
 					<ul class="nav navbar-nav">
 						<li class="">
-						<a href="http://www.jianshu.com/">
-						<span class="menu-text">发现</span>
+						<a href="{{url('home')}}">
+						<span class="menu-text">首页</span>
 						<i class="iconfont ic-navigation-discover menu-icon"></i>
 						</a>            
 						</li>
-						<li class="">
+						<!--<li class="">
 						<a href="http://www.jianshu.com/subscriptions">
 						<span class="menu-text">关注</span><i class="iconfont ic-navigation-follow menu-icon"></i>
 						</a>            
-						</li>
+						</li>-->
 						<li class="notification">
 							
 							
@@ -151,6 +151,10 @@
 					
 				</ul>
 			</div> 
+			
+			<form class="form-horizontal" action="{{URL('home/personal/create')}}" method="post">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="hidden" name="_method" value="put">
 			<div class="col-xs-16 col-xs-offset-8 main">
 				<table>
 					<thead>
@@ -175,7 +179,7 @@
 				</tr> 
 				<tr>
 					 
-					<td class="setting-title">昵称</td>
+					<td class="setting-title">用户名</td>
 						
             
 					<td>
@@ -187,10 +191,10 @@
 				<tr>
 					<td class="setting-title">电子邮件</td> 
 					<td>
-						<form>
-							<input type="button" value="发送" class="btn btn-hollow pull-right">
-							<input type="email" placeholder="请输入你的常用邮箱">
-						</form>
+						
+							<!--<input type="button" value="发送" class="btn btn-hollow pull-right">-->
+							<input type="email" value="{{$v->email}}">
+						
 					</td>
 				</tr> 
 				<tr>
@@ -205,23 +209,28 @@
 				<tr>
 					<td class="setting-title">年龄</td> 
 					<td>
-						<input type="text" placeholder="请输入年龄">
+						<input type="text" value="{{$v->age}}">
 					</td>
 				</tr> 
 				<tr>
 					<td class="setting-title">性别</td> 
 					<td>
-						<input type="text" placeholder="请输入性别">
+						<input type="text" value="{{$v->sex}}">
 					</td>
 				</tr> 
 				@endforeach
 				
 				</tbody>
 				</table> 
-				<input type="submit" class="btn btn-success setting-save" value="保存"> <!----> <!---->
+				
+			    <input type="submit" class="btn btn-success setting-save" value="保存">
+			    <!--<button type="submit" class="btn btn-success setting-save">保存</button>-->
+				<!--<button class="btn btn-success setting-save" onclick="window.location='{{URL('admin/personal')}}/{{ $v->id }}/edit'">编辑</button>--><!----> <!---->
 			</div>
+			</form>
+
 		</div>
-	</div>
+	</d
 
     <script src="{{asset('homes/js/push.js')}}"></script>
 	<script src="{{asset('homes/js/hm.js')}}"></script>
