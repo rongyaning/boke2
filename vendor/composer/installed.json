@@ -3466,5 +3466,105 @@
             "testing",
             "xunit"
         ]
+    },
+    {
+        "name": "iscms/alisms-for-laravel",
+        "version": "0.0.3",
+        "version_normalized": "0.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ISCLOUDX/alisms.git",
+            "reference": "c713ea802993fb6dd5a0852e660cf7451ef98d39"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ISCLOUDX/alisms/zipball/c713ea802993fb6dd5a0852e660cf7451ef98d39",
+            "reference": "c713ea802993fb6dd5a0852e660cf7451ef98d39",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "time": "2017-01-22T09:00:40+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "iscms\\Alisms\\": "src/",
+                "iscms\\AlismsSdk\\": "src/vendor/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "秋綾",
+                "email": "root@iscloudx.com"
+            }
+        ],
+        "description": "阿里大鱼laravel5封装包,提供简单明确的调用方法",
+        "homepage": "https://www.iscloudx.com",
+        "keywords": [
+            "alisms",
+            "bigfish",
+            "大鱼",
+            "短信接口",
+            "阿里云",
+            "阿里云大鱼短信",
+            "阿里云短信",
+            "阿里大鱼"
+        ]
+    },
+    {
+        "name": "gregwar/captcha",
+        "version": "v1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Gregwar/Captcha.git",
+            "reference": "2f704c8bc3f1bb5f58994af2729e77ac4e3172e6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Gregwar/Captcha/zipball/2f704c8bc3f1bb5f58994af2729e77ac4e3172e6",
+            "reference": "2f704c8bc3f1bb5f58994af2729e77ac4e3172e6",
+            "shasum": ""
+        },
+        "require": {
+            "ext-gd": "*",
+            "php": ">=5.3.0"
+        },
+        "time": "2017-04-19T08:10:55+00:00",
+        "type": "captcha",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Gregwar\\Captcha\\": "/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Grégoire Passault",
+                "email": "g.passault@gmail.com",
+                "homepage": "http://www.gregwar.com/"
+            },
+            {
+                "name": "Jeremy Livingston",
+                "email": "jeremy.j.livingston@gmail.com"
+            }
+        ],
+        "description": "Captcha generator",
+        "homepage": "https://github.com/Gregwar/Captcha",
+        "keywords": [
+            "bot",
+            "captcha",
+            "spam"
+        ]
     }
 ]
