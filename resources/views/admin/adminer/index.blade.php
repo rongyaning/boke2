@@ -86,11 +86,7 @@
       <script type="text/javascript">
             function doDel(id){
                 if(confirm('确定要删除吗？')){
-<<<<<<< HEAD
                     $("#mydeleteform").attr("action","{{url('admin/adminer')}}/"+id).submit(); 
-=======
-                    $("#mydeleteform").attr("action","{{url('admin/goods')}}/"+id).submit(); 
->>>>>>> 8eef0081f52a16050f0d5555dc6addd359f3b84a
                 }
             }
       </script>

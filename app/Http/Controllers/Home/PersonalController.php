@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Userinfo;
+use App\Http\Requests;
 
 
 class PersonalController extends Controller
@@ -20,64 +21,59 @@ class PersonalController extends Controller
 
 	 public function create()
     {
-        //加载添加
-        return view("home.personal.index");
+        //加载添加页面
+        $list = Userinfo::where('id','=',$id)->first();
+        //$list = Userinfo::all(); 
+        return view("home.personal.create",['list'=>$list]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
-        //执行添加，判断是否有值，如果有不做任何修改
-        //获取指定的部分数据
-        $data = $request->only("pic","uname","email","state");
-    
+        //获取要添加的数据
+        
+        $data = $request->only("uname",'email','age','sex');
+        //执行添加
+        $id = \DB::table("userinfo")->insertGetId($data);
+        //判断
+        if($id>0){
+            $info = "个人信息添加成功！";
+        }else{
+            $info = "个人信息添加失败！";
+        }
+        return redirect("home/personal");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($id)
     {
         //加载修改页面
+        //
+        $list = Userinfo::where('id','=',$id)->first();
+        
+        return view("home.personal.edit",['list'=>$list]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function update(Request $request, $id)
     {
-        //执行修改，将修改后数据传到数据库
+        //执行修改，
+        $data = $request->only("pic","uname","email","age","sex");
+        $id = \DB::table("userinfo")->where("id",$id)->update($data);
+        if($id>0){
+            return redirect('admin/personal');
+        }else{
+            return back()->with("err","修改失败!");
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         //

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Article;
+use App\Model\Contents;
 
 class ArticleController extends Controller
 {
@@ -75,8 +76,10 @@ class ArticleController extends Controller
     public function edit($id)
     {
         //
-        $list =Contents::get($id);
-        return view("admin.Contents.index");
+        $list = Contents::where('id',$id)->find($id); //获取信息
+       // return $list;
+        
+        return view("admin.Contents.index",["list"=>$list]);
     }
 
     /**
@@ -89,6 +92,17 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         //
+        //return $id;die;
+          $data = Article::where('cid',$id)->get(); //获取信息
+          //
+          $data = $request->only("status");
+          //dd($data);  die;
+          //$data = $request->status;
+          //echo json_encode($data);die;
+          $article = new Article;
+          $article->where("cid",$id)->update($data);
+            return redirect('admin/article');
+          //return redirect("admin/article");
     }
 
     /**

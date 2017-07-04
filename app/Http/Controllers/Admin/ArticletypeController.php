@@ -17,10 +17,10 @@ class ArticletypeController extends Controller
     public function index()
     {
         //$list = Articletype::get();
+
         $db = new Articletype;
         $list = \DB::select("select * from Articletype order by concat(path,id) asc");
-        
-       
+
         //处理信息
         foreach($list as &$v){
             $m = substr_count($v->path,","); //获取path中的逗号
@@ -38,7 +38,7 @@ class ArticletypeController extends Controller
     public function create()
     {
         $list = \DB::select("select * from Articletype order by concat(path,id) asc");
- 
+
         //处理信息
         foreach($list as &$v){
             $m = substr_count($v->path,","); //获取path中的逗号
@@ -63,7 +63,7 @@ class ArticletypeController extends Controller
         if($pid==0){
             $data['path']="0,";
         }else{
-            $db->where("id",$pid)->first();
+            $type=$db->where("id",$pid)->first();
             $data['path'] = $type->path.$pid.",";
         }
         

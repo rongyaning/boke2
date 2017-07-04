@@ -4,7 +4,7 @@
 		<title>
 			博客后台管理 - 博客园</title>
 
-			<link rel="stylesheet" type="text/css" href="{{asset('css/home.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('css/admin.css')}}">
 			<script src="{{asset('js/jquery.js')}}" type="text/javascript"></script>
             <script src="{{asset('js/json2.js')}}" type="text/javascript"></script>      
             <script type="text/javascript" src="{{asset('js/jquery.cnblogs.thickbox.js')}}"></script>
