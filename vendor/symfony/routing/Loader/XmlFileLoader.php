@@ -225,7 +225,11 @@ class XmlFileLoader extends FileLoader
                     $condition = trim($n->textContent);
                     break;
                 default:
+<<<<<<< HEAD
+                    throw new \InvalidArgumentException(sprintf('Unknown tag "%s" used in file "%s". Expected "default", "requirement", "option" or "condition".', $n->localName, $path));
+=======
                     throw new \InvalidArgumentException(sprintf('Unknown tag "%s" used in file "%s". Expected "default", "requirement" or "option".', $n->localName, $path));
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
             }
         }
 

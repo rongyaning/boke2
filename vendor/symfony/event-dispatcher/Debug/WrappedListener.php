@@ -15,7 +15,10 @@ use Symfony\Component\Stopwatch\Stopwatch;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\VarDumper\Caster\ClassStub;
+<<<<<<< HEAD
+=======
 use Symfony\Component\VarDumper\Cloner\VarCloner;
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
@@ -30,8 +33,12 @@ class WrappedListener
     private $dispatcher;
     private $pretty;
     private $stub;
+<<<<<<< HEAD
+    private static $hasClassStub;
+=======
 
     private static $cloner;
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
 
     public function __construct($listener, $name, Stopwatch $stopwatch, EventDispatcherInterface $dispatcher = null)
     {
@@ -58,8 +65,13 @@ class WrappedListener
             $this->name = $name;
         }
 
+<<<<<<< HEAD
+        if (null === self::$hasClassStub) {
+            self::$hasClassStub = class_exists(ClassStub::class);
+=======
         if (null === self::$cloner) {
             self::$cloner = class_exists(ClassStub::class) ? new VarCloner() : false;
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         }
     }
 
@@ -86,7 +98,11 @@ class WrappedListener
     public function getInfo($eventName)
     {
         if (null === $this->stub) {
+<<<<<<< HEAD
+            $this->stub = self::$hasClassStub ? new ClassStub($this->pretty.'()', $this->listener) : $this->pretty.'()';
+=======
             $this->stub = false === self::$cloner ? $this->pretty.'()' : new ClassStub($this->pretty.'()', $this->listener);
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         }
 
         return array(

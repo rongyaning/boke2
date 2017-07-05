@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function login()
     {
-    	return view("home.login");
+        return view("home.login");
     }
         //执行用户登录
    public function doLogin(Request $request)
@@ -24,17 +24,16 @@ class LoginController extends Controller
         
         //执行登陆判断
         $account = $request->input("account");
-        //$password = $request->input("password");
         $password = $request->input("pass");
         //获取对应用户信息
-        $user = Adminer::where("account",$account)->first();
+        $user = User::where("account",$account)->first();
         if(!empty($user)){
             //判断密码
             if($user['pass'] = md5($password)){
                 //存储session跳转页面
-                session()->put("adminer",$user);
+                session()->put("User",$user['account']);
 
-                return redirect("admin");
+                return redirect("home");
                //echo "测试成功!";
             }
         }
@@ -54,8 +53,13 @@ class LoginController extends Controller
    //执行退出
    public function logout(Request $request)
    {
-       $request->session()->forget('admin');
-       return redirect("admin/login");
+       
+      // var_dump(session('User'));
+       
+       $request->session()->forget('User');
+       
+       //var_dump(session('User'));
+       return redirect("home");
    }
     
 }

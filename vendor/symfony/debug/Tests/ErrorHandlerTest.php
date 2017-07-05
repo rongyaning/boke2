@@ -221,12 +221,24 @@ class ErrorHandlerTest extends TestCase
 
             $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
 
+<<<<<<< HEAD
+            $line = null;
+            $logArgCheck = function ($level, $message, $context) use (&$line) {
+=======
             $logArgCheck = function ($level, $message, $context) {
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
                 $this->assertEquals('Notice: Undefined variable: undefVar', $message);
                 $this->assertArrayHasKey('exception', $context);
                 $exception = $context['exception'];
                 $this->assertInstanceOf(SilencedErrorContext::class, $exception);
                 $this->assertSame(E_NOTICE, $exception->getSeverity());
+<<<<<<< HEAD
+                $this->assertSame(__FILE__, $exception->getFile());
+                $this->assertSame($line, $exception->getLine());
+                $this->assertNotEmpty($exception->getTrace());
+                $this->assertSame(1, $exception->count);
+=======
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
             };
 
             $logger
@@ -239,6 +251,10 @@ class ErrorHandlerTest extends TestCase
             $handler->setDefaultLogger($logger, E_NOTICE);
             $handler->screamAt(E_NOTICE);
             unset($undefVar);
+<<<<<<< HEAD
+            $line = __LINE__ + 1;
+=======
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
             @$undefVar++;
 
             restore_error_handler();

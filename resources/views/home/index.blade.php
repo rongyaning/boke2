@@ -25,7 +25,9 @@
             <div id="cnts">
                 <div id="site_nav_top">代码改变世界</div>
                 <div id="login_area">
-                    <span id="span_userinfo">[<a href="{{URL('home/login')}}">登录</a>·<a href="https://www.cnblogs.com/#" onclick="register();return false">注册</a>]</span>
+
+                    <span id="span_userinfo"> @if(session('User')) <a href=""> {{session('User')}}</a>·<a id="user_nav_blog_link" href="">我的博客</a>·<a href="/home/logout">退出</a> @else [<a href="{{URL('home/login')}}"> 登陆 </a>·<a href="{{url('home/register')}}" onclick="register();return false">注册</a>]</span>@endif
+
                 </div>
                 
                 <div class="clear"></div>
@@ -33,10 +35,7 @@
             </div>
         </div> 
 
-    </div>
-    
-    
-    
+    </div> 
     <div id="header">
         <p class="h_r_3"></p>
         <p class="h_r_2"></p>
@@ -44,7 +43,7 @@
         <div id="header_block">
             <div id="logo">
                 <h1>
-                    <a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="{{asset('imges/logo_small.gif')}}"
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="{{asset('images/logo_small.gif')}}"
                                                                              alt="博客园Logo" width="142" height="55"></a>
                 </h1>
             </div>
@@ -72,7 +71,7 @@
             <span id="posts_refresh_tips"></span>
             <a id="posts_refresh" href="https://www.cnblogs.com/#" class="refresh" title="刷新博文列表" onclick="aggSite.loadCategoryPostList();return false">刷新</a> 
             <a  href="http://feed.cnblogs.com/blog/sitehome/rss">
-            <img src="{{asset('imges/icon_rss.gif')}}" alt="点击订阅" style="position:relative;top:2px;" title="订阅博客园文章"></a>
+            <img src="{{asset('images/icon_rss.gif')}}" alt="点击订阅" style="position:relative;top:2px;" title="订阅博客园文章"></a>
         </div>
        
 
@@ -83,10 +82,10 @@
         <div id="post_list">
               @foreach ($art as $v)
                 <div class="post_item_body">
-                    <h3><a class="titlelnk" href="http://www.cnblogs.com/onepixel/p/7078617.html" target="_blank">{{$v->title}}</a></h3>
+                    <h3><a class="titlelnk" href="" target="_blank">{{$v->title}}</a></h3>
                     <p class="post_item_summary">
                         <a href="http://www.cnblogs.com/onepixel/" target="_blank">
-                        <img width="48" height="48" class="pfs" src="{{asset('imges/20151205235751.png')}}" alt=""></a>
+                        <img width="48" height="48" class="pfs" src="{{asset('images/20151205235751.png')}}" alt=""></a>
                         
                     </p>
                     
@@ -421,13 +420,11 @@
         <div>
             <a href="https://ss.knet.cn/verifyseal.dll?sn=e131108110100433392itm000000&amp;ct=df&amp;a=1&amp;pa=0.25787803245785335"
                rel="nofollow" target="_blank" >
-                <img id="cnnic_img" src="{{asset('imges/cnnic.png')}}" alt="" width="64" height="23"></a>
+                <img id="cnnic_img" src="{{asset('images/cnnic.png')}}" alt="" width="64" height="23"></a>
             <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502001144" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
-                <img src="{{asset('imges/ghs.png')}}" alt=""><span style="float:left;height:20px;line-height:20px;margin: 0 5px 0 5px; color:#939393;">沪公网安备 31011502001144号</span></a>
+                <img src="{{asset('images/ghs.png')}}" alt=""><span style="float:left;height:20px;line-height:20px;margin: 0 5px 0 5px; color:#939393;">沪公网安备 31011502001144号</span></a>
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

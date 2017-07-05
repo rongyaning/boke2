@@ -53,7 +53,7 @@
                         <input type="radio" name="status"  value="2"<?php echo $list['status']=="2"?"checked":"";?>/>通过
                         <input type="radio" name="status"  value="3"<?php echo $list['status']=="3"?"checked":"";?>/>未通过
                       </div>
-                    </div>
+          </div>
                   </div><!-- /.box-body -->
                   <div class="box-footer">
 				    <div class="col-sm-offset-2 col-sm-1">

@@ -51,6 +51,18 @@ bar';
         $this->assertContains('Unable to parse at line 3 (near "bar").', trim($tester->getDisplay()));
     }
 
+<<<<<<< HEAD
+    public function testConstantAsKey()
+    {
+        $yaml = <<<YAML
+!php/const:Symfony\Component\Yaml\Tests\Command\Foo::TEST: bar
+YAML;
+        $ret = $this->createCommandTester()->execute(array('filename' => $this->createFile($yaml)), array('verbosity' => OutputInterface::VERBOSITY_VERBOSE, 'decorated' => false));
+        $this->assertSame(0, $ret, 'lint:yaml exits with code 0 in case of success');
+    }
+
+=======
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
     /**
      * @expectedException \RuntimeException
      */
@@ -105,3 +117,11 @@ bar';
         rmdir(sys_get_temp_dir().'/framework-yml-lint-test');
     }
 }
+<<<<<<< HEAD
+
+class Foo
+{
+    const TEST = 'foo';
+}
+=======
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b

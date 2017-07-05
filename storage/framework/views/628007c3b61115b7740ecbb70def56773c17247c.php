@@ -16,39 +16,34 @@
         <section class="content">
           <div class="row">
             <!-- right column -->
-			<?php $__currentLoopData = $list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+			
             <div class="col-md-12">
               <!-- Horizontal Form -->
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-plus"></i> 编辑收藏信息</h3>
                 </div><!-- /.box-header -->
-				 <form class="form-horizontal" action="<?php echo e(URL('admin/collection')); ?>/<?php echo e($v->id); ?>" method="post">
+				 <form class="form-horizontal" action="<?php echo e(URL('admin/collection')); ?>/<?php echo e($list->id); ?>" method="post">
                   <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                   <input type="hidden" name="_method" value="put">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="inputEmail3"   class="col-sm-2 control-label">用户id</label>
                       <div class="col-sm-4">
-                        <input type="text" name="userid" readonly class="form-control" value="<?php echo e($v->userid); ?>">
+                        <input type="text" name="userid" readonly class="form-control" value="<?php echo e($list->userid); ?>">
                       </div>
                     </div>
 					<div class="form-group">
                       <label for="inputPassword3"  class="col-sm-2 control-label">文章id</label>
                       <div class="col-sm-4">
-                        <input type="text" name="ArticleId" readonly class="form-control" value="<?php echo e($v->ArticleId); ?>">
+                        <input type="text" name="ArticleId" readonly class="form-control" value="<?php echo e($list->ArticleId); ?>">
                       </div>
                     </div>
-					<div class="form-group">
-                      <label for="inputPassword3"  class="col-sm-2 control-label">文章id</label>
-                      <div class="col-sm-4">
-                        <input type="text" name="content"  class="form-control" value="<?php echo e($v->content); ?>">
-                      </div>
-                    </div>
+					
                   </div><!-- /.box-body -->
                   <div class="box-footer">
 				    <div class="col-sm-offset-2 col-sm-1">
-						<button type="submit" class="btn btn-primary">提交</button>
+						<!--<button type="submit" class="btn btn-primary">提交</button>-->
                     </div>
                   </div><!-- /.box-footer -->
                 </form> 
@@ -68,7 +63,7 @@
               </div><!-- /.box -->
        
             </div><!--/.col (right) --> 
-			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+		
 			
           </div>   <!-- /.row -->
         </section><!-- /.content -->
