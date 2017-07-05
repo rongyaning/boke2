@@ -178,7 +178,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 		Barryvdh\Debugbar\ServiceProvider::class,
 		iscms\Alisms\AlidayuServiceProvider::class,
-		//zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
+		zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
+
     ],
 
     /*
