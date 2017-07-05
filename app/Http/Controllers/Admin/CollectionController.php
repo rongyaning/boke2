@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Collection;
+use App\Model\Discusstab;
+use App\Model\userinfo;
 class CollectionController extends Controller
 {
     /**
@@ -16,32 +18,21 @@ class CollectionController extends Controller
     {
         //
 		$db = \DB::table("collection");
-       
        //判断并封装搜索条件
        $params = array();
        if(!empty($_GET['userid'])){
            $db->where("userid","like","%{$_GET['userid']}%");
            $params['userid'] = $_GET['userid']; //维持搜索条件
-       }
-       
+       }   
        // $list = $db->get(); //获取全部
        $list = $db->orderBy("id",'desc')->paginate(5); //5条每页浏览
-        
+	   
+	  /*  $d = \DB::table("userinfo")->get(['uname']);
+	  $d == $list['userid'] */;
+	   
+	  
        return view("admin.Collection.index",['list'=>$list,'params'=>$params]);
-		
-		
-		
-		
-		
-		
-		
-		//$list = Collection::get();
-		
-		//return view("admin.Collection.index",["list"=>$list]);
-		
-		 //$users = DB::select('select * from student');
-      //return view('stud_delete_view',['users'=>$users]);
-		
+	   
     }
 
     /**
@@ -85,7 +76,7 @@ class CollectionController extends Controller
     public function edit($id)
     {
         
-		$list = Collection::get();
+		$list = Collection::where("id",$id)->first();
         return view("admin.collection.edit",["list"=>$list]);
     }
 
@@ -112,7 +103,7 @@ class CollectionController extends Controller
             return back()->with("err","修改失败!");
         }
          
-       
+     
 	 }
 	
 

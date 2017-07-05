@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
-use App\Model\user;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class RequestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class UserController extends Controller
     public function index()
     {
         //
-		return view("home.user.index");
+		return view("home.register");
     }
 
     /**
@@ -41,11 +40,15 @@ class UserController extends Controller
         //
 		 $db = new user;
        //获取要添加的数据
-        $data = $request->only("uid","phone","account","password");
+        $data = $request->only("phone","password");
 		$data['password'] = md5($data['password']);
 		//$data['addtime']=date("Y-m-d H:i:s",time());
         //执行添加
         $id = $db->insertGetId($data);
+		/* 	$uid = new userinfo;
+		$info = userinfo::where('userid');
+		$info("userid") = $id;
+		$i = $uid->insertGetId($info); */
         //判断
         if($id>0){
          echo  $info = "类别信息添加成功！";

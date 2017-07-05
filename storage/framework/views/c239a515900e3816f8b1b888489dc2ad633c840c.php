@@ -93,8 +93,8 @@
         <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(7100336,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
             <a id="green_channel_follow" onclick="follow(&#39;1e7fa90d-decd-e411-b908-9dcfd8948a71&#39;);" href="javascript:void(0);">关注我</a>
     <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
-    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="<?php echo e(url('imges/icon_weibo_24.png')); ?>" alt=""></a>
-    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="<?php echo e(url('imges/wechat.png')); ?>" alt=""></a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="<?php echo e(url('images/icon_weibo_24.png')); ?>" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="<?php echo e(url('images/wechat.png')); ?>" alt=""></a>
 </div>
 
 
