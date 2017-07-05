@@ -92,10 +92,13 @@ class NativeSessionStorage implements SessionStorageInterface
      * upload_progress.freq, "1%"
      * upload_progress.min-freq, "1"
      * url_rewriter.tags, "a=href,area=href,frame=src,form=,fieldset="
+<<<<<<< HEAD
      * sid_length, "32"
      * sid_bits_per_character, "5"
      * trans_sid_hosts, $_SERVER['HTTP_HOST']
      * trans_sid_tags, "a=href,area=href,frame=src,form="
+=======
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
      *
      * @param array                                                            $options Session configuration options
      * @param AbstractProxy|NativeSessionHandler|\SessionHandlerInterface|null $handler
@@ -339,7 +342,10 @@ class NativeSessionStorage implements SessionStorageInterface
             'use_only_cookies', 'use_trans_sid', 'upload_progress.enabled',
             'upload_progress.cleanup', 'upload_progress.prefix', 'upload_progress.name',
             'upload_progress.freq', 'upload_progress.min-freq', 'url_rewriter.tags',
+<<<<<<< HEAD
             'sid_length', 'sid_bits_per_character', 'trans_sid_hosts', 'trans_sid_tags',
+=======
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         ));
 
         foreach ($options as $key => $value) {

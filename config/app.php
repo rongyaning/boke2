@@ -162,7 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+		
         /*
          * Package Service Providers...
          */
@@ -178,7 +178,9 @@ return [
         App\Providers\RouteServiceProvider::class,
       
 		Barryvdh\Debugbar\ServiceProvider::class,
-        iscms\Alisms\AlidayuServiceProvider::class,
+
+		iscms\Alisms\AlidayuServiceProvider::class,
+		zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
 
     ],
 

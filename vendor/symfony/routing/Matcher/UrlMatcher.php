@@ -207,7 +207,11 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
     protected function handleRouteRequirements($pathinfo, $name, Route $route)
     {
         // expression condition
+<<<<<<< HEAD
         if ($route->getCondition() && !$this->getExpressionLanguage()->evaluate($route->getCondition(), array('context' => $this->context, 'request' => $this->request ?: $this->createRequest($pathinfo)))) {
+=======
+        if ($route->getCondition() && !$this->getExpressionLanguage()->evaluate($route->getCondition(), array('context' => $this->context, 'request' => $this->request))) {
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
             return array(self::REQUIREMENT_MISMATCH, null);
         }
 
@@ -248,6 +252,7 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
 
         return $this->expressionLanguage;
     }
+<<<<<<< HEAD
 
     /**
      * @internal
@@ -263,4 +268,6 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
             'SCRIPT_NAME' => $this->context->getBaseUrl(),
         ));
     }
+=======
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
 }

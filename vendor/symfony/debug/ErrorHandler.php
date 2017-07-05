@@ -100,8 +100,11 @@ class ErrorHandler
     private static $stackedErrors = array();
     private static $stackedErrorLevels = array();
     private static $toStringException = null;
+<<<<<<< HEAD
     private static $silencedErrorCache = array();
     private static $silencedErrorCount = 0;
+=======
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
     private static $exitCode = 0;
 
     /**
@@ -409,6 +412,7 @@ class ErrorHandler
             $errorAsException = self::$toStringException;
             self::$toStringException = null;
         } elseif (!$throw && !($type & $level)) {
+<<<<<<< HEAD
             if (isset(self::$silencedErrorCache[$message])) {
                 $lightTrace = null;
                 $errorAsException = self::$silencedErrorCache[$message];
@@ -427,6 +431,9 @@ class ErrorHandler
             if (null === $lightTrace) {
                 return;
             }
+=======
+            $errorAsException = new SilencedErrorContext($type, $file, $line);
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         } else {
             if ($scope) {
                 $errorAsException = new ContextErrorException($logMessage, 0, $type, $file, $line, $context);
@@ -437,7 +444,23 @@ class ErrorHandler
             // Clean the trace by removing function arguments and the first frames added by the error handler itself.
             if ($throw || $this->tracedErrors & $type) {
                 $backtrace = $backtrace ?: $errorAsException->getTrace();
+<<<<<<< HEAD
                 $lightTrace = $this->cleanTrace($backtrace, $type, $file, $line, $throw);
+=======
+                $lightTrace = $backtrace;
+
+                for ($i = 0; isset($backtrace[$i]); ++$i) {
+                    if (isset($backtrace[$i]['file'], $backtrace[$i]['line']) && $backtrace[$i]['line'] === $line && $backtrace[$i]['file'] === $file) {
+                        $lightTrace = array_slice($lightTrace, 1 + $i);
+                        break;
+                    }
+                }
+                if (!($throw || $this->scopedErrors & $type)) {
+                    for ($i = 0; isset($lightTrace[$i]); ++$i) {
+                        unset($lightTrace[$i]['args']);
+                    }
+                }
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
                 $this->traceReflector->setValue($errorAsException, $lightTrace);
             } else {
                 $this->traceReflector->setValue($errorAsException, array());
@@ -694,6 +717,7 @@ class ErrorHandler
             new ClassNotFoundFatalErrorHandler(),
         );
     }
+<<<<<<< HEAD
 
     private function cleanTrace($backtrace, $type, $file, $line, $throw)
     {
@@ -713,4 +737,6 @@ class ErrorHandler
 
         return $lightTrace;
     }
+=======
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
 }

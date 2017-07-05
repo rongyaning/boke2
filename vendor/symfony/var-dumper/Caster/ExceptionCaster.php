@@ -83,6 +83,10 @@ class ExceptionCaster
     public static function castSilencedErrorContext(SilencedErrorContext $e, array $a, Stub $stub, $isNested)
     {
         $sPrefix = "\0".SilencedErrorContext::class."\0";
+<<<<<<< HEAD
+=======
+        $xPrefix = "\0Exception\0";
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
 
         if (!isset($a[$s = $sPrefix.'severity'])) {
             return $a;
@@ -92,6 +96,7 @@ class ExceptionCaster
             $a[$s] = new ConstStub(self::$errorTypes[$a[$s]], $a[$s]);
         }
 
+<<<<<<< HEAD
         $trace = array(array(
             'file' => $a[$sPrefix.'file'],
             'line' => $a[$sPrefix.'line'],
@@ -103,6 +108,14 @@ class ExceptionCaster
 
         unset($a[$sPrefix.'file'], $a[$sPrefix.'line'], $a[$sPrefix.'trace']);
         $a[Caster::PREFIX_VIRTUAL.'trace'] = new TraceStub($trace);
+=======
+        $trace = array(
+            'file' => $a[$sPrefix.'file'],
+            'line' => $a[$sPrefix.'line'],
+        );
+        unset($a[$sPrefix.'file'], $a[$sPrefix.'line']);
+        $a[Caster::PREFIX_VIRTUAL.'trace'] = new TraceStub(array($trace));
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
 
         return $a;
     }

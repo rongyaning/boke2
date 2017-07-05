@@ -39,7 +39,7 @@
                    <div class="form-group">
                       <label for="inputPassword3"  class="col-sm-2 control-label">文章标题</label>
                       <div class="col-sm-4">
-                        <input type="text" name="disTime" readonly class="form-control" value="{{$list->disTime}}">
+                        <input type="text" name="disTime" readonly class="form-control" value="{{$list->title}}">
                       </div>
                     </div>  
                      <div class="form-group">
@@ -51,7 +51,7 @@
                     <div class="form-group">
                       <label for="inputPassword3"  class="col-sm-2 control-label">作者</label>
                       <div class="col-sm-4">
-                        <input type="text" name="disTime" readonly class="form-control" value="{{$list->disTime}}">
+                        <input type="text" name="disTime" readonly class="form-control" value="{{$list->author}}">
                       </div>
                     </div>  
                     

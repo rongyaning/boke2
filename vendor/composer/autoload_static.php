@@ -4,7 +4,13 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
 class ComposerStaticInitb3d918f2180ae88826b02d9188e61908
+=======
+
+class ComposerStaticInitbbd96f1903f8985b04fa9403a315e2e0
+
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -13,7 +19,13 @@ class ComposerStaticInitb3d918f2180ae88826b02d9188e61908
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
+<<<<<<< HEAD
         '841780ea2e1d6545ea3a253239d59c05' => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu/functions.php',
+=======
+
+        '841780ea2e1d6545ea3a253239d59c05' => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu/functions.php',
+
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
@@ -3219,10 +3231,24 @@ class ComposerStaticInitb3d918f2180ae88826b02d9188e61908
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInitb3d918f2180ae88826b02d9188e61908::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitb3d918f2180ae88826b02d9188e61908::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitb3d918f2180ae88826b02d9188e61908::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitb3d918f2180ae88826b02d9188e61908::$classMap;
+=======
+<<<<<<< HEAD
+            $loader->prefixLengthsPsr4 = ComposerStaticInitbbd96f1903f8985b04fa9403a315e2e0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitbbd96f1903f8985b04fa9403a315e2e0::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitbbd96f1903f8985b04fa9403a315e2e0::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitbbd96f1903f8985b04fa9403a315e2e0::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInit53dcb3c1d6efb277e03d00f654b95fcd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit53dcb3c1d6efb277e03d00f654b95fcd::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit53dcb3c1d6efb277e03d00f654b95fcd::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit53dcb3c1d6efb277e03d00f654b95fcd::$classMap;
+>>>>>>> 043519a8b7f142ca71f549a6ac31c3c75f348366
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
 
         }, null, ClassLoader::class);
     }

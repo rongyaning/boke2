@@ -21,7 +21,10 @@ class DiscusstabController extends Controller
 		$art = Article::get();	
 		
 		$ar = contents::get();
-		$list = discusstab::get();
+		
+		$list = discusstab::where('status', 2)->get();
+		
+		
 		$js = \DB::table("log")->get()->first();
 		
 		//print_r($list);die();
@@ -80,6 +83,7 @@ class DiscusstabController extends Controller
 		//$js = \DB::table("userinfo")->get('id',$id)->first();
         //$list =  discusstab::get();
 		//return view("home.discusstab.index",["js"=>$js]);
+		
     }
 
     /**

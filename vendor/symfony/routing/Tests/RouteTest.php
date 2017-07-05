@@ -221,6 +221,7 @@ class RouteTest extends TestCase
     }
 
     /**
+<<<<<<< HEAD
      * Tests that unserialization does not fail when the compiled Route is of a
      * class other than CompiledRoute, such as a subclass of it.
      */
@@ -239,6 +240,8 @@ class RouteTest extends TestCase
     }
 
     /**
+=======
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
      * Tests that the serialized representation of a route in one symfony version
      * also works in later symfony versions, i.e. the unserialized route is in the
      * same state as another, semantically equivalent, route.

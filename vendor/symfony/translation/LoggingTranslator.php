@@ -96,7 +96,11 @@ class LoggingTranslator implements TranslatorInterface, TranslatorBagInterface
      */
     public function getFallbackLocales()
     {
+<<<<<<< HEAD
         if ($this->translator instanceof Translator || method_exists($this->translator, 'getFallbackLocales')) {
+=======
+        if ($this->translator instanceof Translator) {
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
             return $this->translator->getFallbackLocales();
         }
 

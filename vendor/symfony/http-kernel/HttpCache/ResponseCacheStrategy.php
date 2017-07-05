@@ -39,7 +39,11 @@ class ResponseCacheStrategy implements ResponseCacheStrategyInterface
      */
     public function add(Response $response)
     {
+<<<<<<< HEAD
         if (!$response->isFresh() || !$response->isCacheable()) {
+=======
+        if ($response->isValidateable()) {
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
             $this->cacheable = false;
         } else {
             $maxAge = $response->getMaxAge();
@@ -70,9 +74,12 @@ class ResponseCacheStrategy implements ResponseCacheStrategyInterface
         if ($response->isValidateable()) {
             $response->setEtag(null);
             $response->setLastModified(null);
+<<<<<<< HEAD
         }
 
         if (!$response->isFresh()) {
+=======
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
             $this->cacheable = false;
         }
 

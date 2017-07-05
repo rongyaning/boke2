@@ -2169,6 +2169,7 @@
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
+<<<<<<< HEAD
         ],
         "authors": [
             {
@@ -2176,6 +2177,15 @@
                 "email": "taylor@laravel.com"
             }
         ],
+=======
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         "description": "Powerful REPL for the Laravel framework.",
         "keywords": [
             "REPL",
@@ -3601,6 +3611,10 @@
         "name": "hamcrest/hamcrest-php",
         "version": "v1.2.2",
         "version_normalized": "1.2.2.0",
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         "source": {
             "type": "git",
             "url": "https://github.com/hamcrest/hamcrest-php.git",
@@ -3633,8 +3647,12 @@
             ],
             "files": [
                 "hamcrest/Hamcrest.php"
+<<<<<<< HEAD
             ]
         },
+=======
+    
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "BSD"
@@ -3715,6 +3733,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0",
             "squizlabs/php_codesniffer": "~2.3"
+<<<<<<< HEAD
         },
         "time": "2016-11-18T02:57:31+00:00",
         "type": "library",
@@ -3768,10 +3787,15 @@
             "qiniu/php-sdk": "^7.0"
         },
         "time": "2017-05-24T07:22:45+00:00",
+=======
+        },
+        "time": "2016-11-18T02:57:31+00:00",
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
+<<<<<<< HEAD
                 "zgldh\\QiniuStorage\\": "src/"
             }
         },
@@ -3792,6 +3816,17 @@
                 "role": "Developer"
             }
         ],
+=======
+                "Qiniu\\": "src/Qiniu"
+            },
+            "files": [
+                "src/Qiniu/functions.php"
+
+            ]
+        },
+        
+
+>>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         "description": "Qiniu Resource (Cloud) Storage SDK for Laravel 5",
         "keywords": [
             "cloud",
@@ -3801,4 +3836,4 @@
             "storage"
         ]
     }
-]
+

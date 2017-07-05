@@ -20,7 +20,10 @@ Route::get('/home/login',"Home\LoginController@login");//加载前台登录界�
 Route::post('/home/dologin',"Home\LoginController@doLogin"); //执行前台登录
 Route::get('/home/logout',"Home\LoginController@logout"); //执行退出
 Route::get('/home/getcode',"Home\LoginController@getCode");//加载验证码
-Route::get('/home/register',"Home\RegisterController@register");//加载前台注册页面
+//Route::get('/home/register',"Home\RegisterController@register");//加载前台注册页面
+//Route::get('/home/user',"Home\UserController@index");//加载前台注册页面
+//Route::get('/home/user',"Home\UserController@Alidayu");//加载前台注册页面
+
 
 
 
@@ -37,6 +40,8 @@ Route::group(['prefix' => 'home','middleware' => 'home'], function () {
     Route::get('personal',"Home\PersonalController@index");//加载前台个人中心界面
     Route::get('list',"Home\ListController@index");//加载前台文章列表页
 	Route::resource('detail',"Home\DetailController");//加载前台文章详情页
+    //Route::post('detail{id}/edit',"Home\DetailController@edit");//加载前台文章编辑页
+    //Route::post('detail/{id}/update',"Home\DetailController@update");//编辑文章页
     Route::get('list/create',"Home\ListController@create");//发布文章页
     Route::get('delete/{id}',"Home\DetailController@destroy");//文章列表页删除
     Route::post('detail/store',"Home\DetailController@store");//文章添加页
@@ -44,7 +49,8 @@ Route::group(['prefix' => 'home','middleware' => 'home'], function () {
     Route::get('personal/edit',"Home\PersonalController@update");//加载前台个人中心修改界面
     Route::get('personal/create',"Home\PersonalController@store");//加载前台个人中心添加界面
 	Route::resource('discusstab',"Home\DiscusstabController");//前台评论表管理
-	Route::resource('user',"Home\UserController");//加载注册页
+	Route::resource('register',"Home\RegisterController");//前台评论表管理
+	//Route::resource('user',"Home\UserController");//加载注册页
 });
 
 
