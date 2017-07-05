@@ -37,6 +37,8 @@ Route::group(['prefix' => 'home','middleware' => 'home'], function () {
     Route::get('personal',"Home\PersonalController@index");//加载前台个人中心界面
     Route::get('list',"Home\ListController@index");//加载前台文章列表页
 	Route::resource('detail',"Home\DetailController");//加载前台文章详情页
+    //Route::post('detail{id}/edit',"Home\DetailController@edit");//加载前台文章编辑页
+    //Route::post('detail/{id}/update',"Home\DetailController@update");//编辑文章页
     Route::get('list/create',"Home\ListController@create");//发布文章页
     Route::get('delete/{id}',"Home\DetailController@destroy");//文章列表页删除
     Route::post('detail/store',"Home\DetailController@store");//文章添加页

@@ -91,10 +91,9 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         //return $id;die;
           $data = Article::where('cid',$id)->get(); //获取信息
-          //
+          //获取状态
           $data = $request->only("status");
           //dd($data);  die;
           //$data = $request->status;

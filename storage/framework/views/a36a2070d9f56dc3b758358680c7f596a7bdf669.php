@@ -133,7 +133,7 @@
 															1
 														</td>                
 														<td style="text-align: center">
-															  <a href="https://i.cnblogs.com/EditArticles.aspx?postid=7086936&amp;update=1">编辑</a>
+															  <a href="<?php echo e(URL('home/detail')); ?>/<?php echo e($v->cid); ?>/edit">编辑</a>
 														</td>
 														<td style="text-align: center">
 															<a href='delete/<?php echo e($v->id); ?>)'>删除</a>
