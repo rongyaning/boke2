@@ -176,8 +176,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        iscms\Alisms\AlidayuServiceProvider::class,
+      
 		Barryvdh\Debugbar\ServiceProvider::class,
+        iscms\Alisms\AlidayuServiceProvider::class,
 
     ],
 
