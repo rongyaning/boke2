@@ -20,7 +20,10 @@ Route::get('/home/login',"Home\LoginController@login");//加载前台登录界�
 Route::post('/home/dologin',"Home\LoginController@doLogin"); //执行前台登录
 Route::get('/home/logout',"Home\LoginController@logout"); //执行退出
 Route::get('/home/getcode',"Home\LoginController@getCode");//加载验证码
-Route::get('/home/register',"Home\RegisterController@register");//加载前台注册页面
+//Route::get('/home/register',"Home\RegisterController@register");//加载前台注册页面
+//Route::get('/home/user',"Home\UserController@index");//加载前台注册页面
+//Route::get('/home/user',"Home\UserController@Alidayu");//加载前台注册页面
+
 
 
 
@@ -44,7 +47,8 @@ Route::group(['prefix' => 'home','middleware' => 'home'], function () {
     Route::get('personal/edit',"Home\PersonalController@update");//加载前台个人中心修改界面
     Route::get('personal/create',"Home\PersonalController@store");//加载前台个人中心添加界面
 	Route::resource('discusstab',"Home\DiscusstabController");//前台评论表管理
-	Route::resource('user',"Home\UserController");//加载注册页
+	Route::resource('register',"Home\RegisterController");//前台评论表管理
+	//Route::resource('user',"Home\UserController");//加载注册页
 });
 
 

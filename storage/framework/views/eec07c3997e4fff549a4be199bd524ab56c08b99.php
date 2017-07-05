@@ -30,21 +30,17 @@
                 <div class="box-body">
                   <table class="table table-bordered">
                     <tr>
-						<th>id</th>
+					<th>id</th>
                       <th>用户id</th>
                       <th>文章id</th> 
-                       
-				
                       <th style="width: 100px">操作</th>
                     </tr>
                  <?php $__currentLoopData = $list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
                       <td><?php echo e($v->id); ?></td>
                       <td><?php echo e($v->userid); ?></td>	
-                      <td><?php echo e($v->ArticleId); ?></td> 
-                      
-									  
-					   <td><button onclick="doDel(<?php echo e($v->id); ?>)" class="btn btn-xs btn-danger">删除</button> 
+                      <td><?php echo e($v->ArticleId); ?></td> 					  
+					 <td><button onclick="doDel(<?php echo e($v->id); ?>)" class="btn btn-xs btn-danger">删除</button> 
                      <button class="btn btn-xs btn-primary" onclick="window.location='<?php echo e(URL('admin/collection')); ?>/<?php echo e($v->id); ?>/edit'">编辑</button> </td>
                     </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

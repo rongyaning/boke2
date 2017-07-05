@@ -25,7 +25,7 @@
             <div id="cnts">
                 <div id="site_nav_top">代码改变世界</div>
                 <div id="login_area">
-                    <span id="span_userinfo">[<a href="<?php echo e(URL('home/login')); ?>">登录</a>·<a href="<?php echo e(url('home/user')); ?>">注册
+                    <span id="span_userinfo">[<a href="<?php echo e(URL('home/login')); ?>">登录</a>·<a href="<?php echo e(url('home/register')); ?>">注册
 			<span id="msg_count"></span></a>]</span>
                 </div>
                 

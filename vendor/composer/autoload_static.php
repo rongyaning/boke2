@@ -23,6 +23,11 @@ class ComposerStaticInitbbd96f1903f8985b04fa9403a315e2e0
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'i' => 
+        array (
+            'iscms\\Alisms\\' => 13,
+            'iscms\\AlismsSdk\\' => 16,
+        ),
         'X' => 
         array (
             'XdgBaseDir\\' => 11,
@@ -111,6 +116,14 @@ class ComposerStaticInitbbd96f1903f8985b04fa9403a315e2e0
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'iscms\\Alisms\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/iscms/alisms-for-laravel/src',
+        ),
+        'iscms\\AlismsSdk\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/iscms/alisms-for-laravel/src/vendor',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -3083,6 +3096,14 @@ class ComposerStaticInitbbd96f1903f8985b04fa9403a315e2e0
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'iscms\\AlismsSdk\\AlibabaAliqinFcSmsNumSendRequest' => __DIR__ . '/..' . '/iscms/alisms-for-laravel/src/vendor/AlibabaAliqinFcSmsNumSendRequest.php',
+        'iscms\\AlismsSdk\\RequestCheckUtil' => __DIR__ . '/..' . '/iscms/alisms-for-laravel/src/vendor/RequestCheckUtil.php',
+        'iscms\\AlismsSdk\\ResultSet' => __DIR__ . '/..' . '/iscms/alisms-for-laravel/src/vendor/ResultSet.php',
+        'iscms\\AlismsSdk\\TopClient' => __DIR__ . '/..' . '/iscms/alisms-for-laravel/src/vendor/TopClient.php',
+        'iscms\\AlismsSdk\\TopLogger' => __DIR__ . '/..' . '/iscms/alisms-for-laravel/src/vendor/TopLogger.php',
+        'iscms\\Alisms\\AlidayuServiceProvider' => __DIR__ . '/..' . '/iscms/alisms-for-laravel/src/AlidayuServiceProvider.php',
+        'iscms\\Alisms\\SendSmsApi' => __DIR__ . '/..' . '/iscms/alisms-for-laravel/src/SendSmsApi.php',
+        'iscms\\Alisms\\SendsmsPusher' => __DIR__ . '/..' . '/iscms/alisms-for-laravel/src/SendsmsPusher.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

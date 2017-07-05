@@ -87,15 +87,7 @@
 	<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
 	
         <div class="form-space-top hidden-xs"></div>
-        <!--每一行--> 
-		<div class="form-group">
-            <div class="col-sm-2 control-label">
-                <label class="w4-4" for="LoginName">登录帐号</label>
-            </div>
-            <div class="col-sm-10 has-feedback has-error">
-                <input class="form-control input-validation-error" placeholder="登录用户名，不少于4个字符" type="text" data-val="true" data-val-length="不合要求，至少2个字符，最多30个字符!" data-val-length-max="30" data-val-length-min="2" data-val-nospace="登录用户名不能包含空格!" data-val-remote="&#39;登录帐号&#39; is invalid." data-val-remote-additionalfields="*.LoginName" data-val-remote-url="/Account/CheckLoginName" data-val-required="请输入登录用户名!" id="LoginName" name="account" value="" aria-required="true" aria-invalid="true" aria-describedby="LoginName-error">   
-            </div>
-        </div>
+        <!--每一行--> 	
         <div class="form-group">
             <div class="col-sm-2 control-label">
                 <label class="w4-4" for="PhoneNum">手机号码</label>
@@ -104,7 +96,16 @@
                 <input class="form-control input-validation-error" placeholder="激活帐户需要手机短信验证" type="text" data-val="true" data-val-length="请输入11位手机号码" data-val-length-max="11" data-val-length-min="11" data-val-regex="输入的手机号码有误" data-val-regex-pattern="^1[34578]\d{9}$" data-val-remote="&#39;手机号码&#39; is invalid." data-val-remote-additionalfields="phone" data-val-remote-url="/Account/CheckPhoneNum" data-val-required="请输入手机号码!" id="PhoneNum" name="phone" value="" aria-required="true" aria-invalid="true" aria-describedby="PhoneNum-error">   
             </div>
         </div>
-      
+		 <div class="form-group">
+           <div class="col-sm-5 control-label"></div>
+            <div class="col-sm-7 has-feedback has-error">
+				
+                <input class="form-control input-validation-error" placeholder="获取手机短信验证码" type="text" data-val="true" data-val-length="请输入手机短信验证码" data-val-length-max="11" data-val-length-min="11" data-val-regex="验证码有误"  name="" value=""  style="width:69%;float:left">
+				<button >获取验证码</button>
+				
+            </div>
+			 
+        </div>
         <div class="space-line-height hidden-xs"></div>
         <div class="form-group">
             <div class="col-sm-2 control-label">

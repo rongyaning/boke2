@@ -76,7 +76,7 @@
     
     
     
-        <?php $__env->startSection("myscript"); ?>
+    <?php $__env->startSection("myscript"); ?>
       <script type="text/javascript">
             function doDel(id){
                 if(confirm('确定要删除吗？')){
