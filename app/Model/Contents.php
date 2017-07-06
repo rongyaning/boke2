@@ -8,5 +8,7 @@ class Contents extends Model
 {
 	//protected $table = 'article';
    protected $table = 'contents';
+
+   public $timestamps = false;
     
 }
