@@ -31,21 +31,17 @@
                 <div class="box-body">
                   <table class="table table-bordered">
                     <tr>
-						            <th>id</th>
+					<th>id</th>
                       <th>用户id</th>
                       <th>文章id</th> 
-                       
-				
                       <th style="width: 100px">操作</th>
                     </tr>
                  @foreach($list as $v)
                     <tr>
                       <td>{{$v->id}}</td>
                       <td>{{$v->userid}}</td>	
-                      <td>{{$v->ArticleId}}</td> 
-                      
-									  
-					           <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
+                      <td>{{$v->ArticleId}}</td> 					  
+					 <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
                      <button class="btn btn-xs btn-primary" onclick="window.location='{{URL('admin/collection')}}/{{ $v->id }}/edit'">编辑</button> </td>
                     </tr>
                     @endforeach

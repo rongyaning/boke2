@@ -39,7 +39,7 @@
                       <th>标题</th>
                       <th>作者</th>
                       <th>头像</th>
-					             <th>文章类型</th>
+					  <th>文章类型</th>
                       <th>发布时间</th>
                       <th>状态</th>
                       <th>操作</th>
@@ -54,10 +54,10 @@
                       <td><?php echo e($v->picname); ?></td>
                       <td><?php echo e($v->articleType); ?></td>
                       <td><?php echo e($v->addtime); ?></td>
-                      <td class="btn btn-primary btn-xs"><?php if($v->status=='1'): ?>已通过 <?php elseif($v->status=='2'): ?>未通过 <?php else: ?>待审核 <?php endif; ?></td>
+                      <td class="btn btn-primary btn-xs"><?php if($v->status=='0'): ?>已通过 <?php elseif($v->status=='1'): ?>未通过 <?php else: ?>待审核 <?php endif; ?></td>
         
-                      <td><a href = 'delete/<?php echo e($v->id); ?>' class="btn btn-xs btn-danger">删除</a> 
-                      <button class="btn btn-xs btn-primary" onclick="window.location='<?php echo e(URL('/admin/contents')); ?>'">查看内容详情</button> 
+                      <td><button onclick="doDel(<?php echo e($v->id); ?>)" class="btn btn-xs btn-danger">删除</button>
+                      <button class="btn btn-xs btn-primary" onclick="window.location='<?php echo e(URL('admin/article')); ?>/<?php echo e($v->cid); ?>/edit'">查看内容详情</button> 
                       </td>
                     </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -84,4 +84,16 @@
         </form>
     <?php $__env->stopSection(); ?>
     
+
+
+
+     <?php $__env->startSection("myscript"); ?>
+      <script type="text/javascript">
+            function doDel(id){
+                if(confirm('确定要删除吗？')){
+                    $("#mydeleteform").attr("action","<?php echo e(url('admin/article')); ?>/"+id).submit(); 
+                }
+            }
+      </script>
+    <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -42,7 +42,7 @@
                     <?php $__currentLoopData = $list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
                       <td><?php echo e($v->id); ?></td>
-                      <td><?php echo e($v->title); ?></td>
+                      <td><?php echo e($v->name); ?></td>
                       
                       <td><button onclick="doDel(<?php echo e($v->id); ?>)" class="btn btn-xs btn-danger">删除</button> 
                      
@@ -77,7 +77,7 @@
       <script type="text/javascript">
             function doDel(id){
                 if(confirm('确定要删除吗？')){
-                    $("#mydeleteform").attr("action","<?php echo e(url('admin/goods')); ?>/"+id).submit(); 
+                    $("#mydeleteform").attr("action","<?php echo e(url('admin/articletype')); ?>/"+id).submit(); 
                 }
             }
       </script>
