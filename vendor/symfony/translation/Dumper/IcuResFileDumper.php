@@ -52,11 +52,7 @@ class IcuResFileDumper extends FileDumper
 
         $resOffset = $this->getPosition($data);
 
-<<<<<<< HEAD
         $data .= pack('v', count($messages->all($domain)))
-=======
-        $data .= pack('v', count($messages))
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
             .$indexes
             .$this->writePadding($data)
             .$resources
@@ -67,19 +63,11 @@ class IcuResFileDumper extends FileDumper
         $root = pack('V7',
             $resOffset + (2 << 28), // Resource Offset + Resource Type
             6,                      // Index length
-<<<<<<< HEAD
             $keyTop,                        // Index keys top
             $bundleTop,                     // Index resources top
             $bundleTop,                     // Index bundle top
             count($messages->all($domain)), // Index max table length
             0                               // Index attributes
-=======
-            $keyTop,                // Index keys top
-            $bundleTop,             // Index resources top
-            $bundleTop,             // Index bundle top
-            count($messages),       // Index max table length
-            0                       // Index attributes
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         );
 
         $header = pack('vC2v4C12@32',

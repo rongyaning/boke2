@@ -672,7 +672,6 @@ class Request
     {
         @trigger_error(sprintf('The "%s()" method is deprecated since version 3.3 and will be removed in 4.0. Use the $trustedHeaderSet argument of the Request::setTrustedProxies() method instead.', __METHOD__), E_USER_DEPRECATED);
 
-<<<<<<< HEAD
         if ('forwarded' === $key) {
             $key = self::HEADER_FORWARDED;
         } elseif ('client_ip' === $key) {
@@ -684,9 +683,6 @@ class Request
         } elseif ('client_port' === $key) {
             $key = self::HEADER_CLIENT_PORT;
         } elseif (!array_key_exists($key, self::$trustedHeaders)) {
-=======
-        if (!array_key_exists($key, self::$trustedHeaders)) {
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
             throw new \InvalidArgumentException(sprintf('Unable to set the trusted header name for key "%s".', $key));
         }
 

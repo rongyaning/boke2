@@ -51,7 +51,6 @@ bar';
         $this->assertContains('Unable to parse at line 3 (near "bar").', trim($tester->getDisplay()));
     }
 
-<<<<<<< HEAD
     public function testConstantAsKey()
     {
         $yaml = <<<YAML
@@ -61,8 +60,6 @@ YAML;
         $this->assertSame(0, $ret, 'lint:yaml exits with code 0 in case of success');
     }
 
-=======
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
     /**
      * @expectedException \RuntimeException
      */
@@ -117,11 +114,8 @@ YAML;
         rmdir(sys_get_temp_dir().'/framework-yml-lint-test');
     }
 }
-<<<<<<< HEAD
 
 class Foo
 {
     const TEST = 'foo';
 }
-=======
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b

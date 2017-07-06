@@ -92,13 +92,12 @@
                     <div class="post_item_foot">
                         <a href="http://www.cnblogs.com/onepixel/" class="lightblue">作者:{{$v->author}}</a>
                         发布于:{{$v->addtime}}
-                        <span class="article_comment"><a
-                                href="http://www.cnblogs.com/onepixel/p/7078617.html#commentform" title="" class="gray">
-
-                       {{$v->author}}</a></span><span class="article_view"></span>
+                        <span class="article_comment">
+                        <a href="http://www.cnblogs.com/onepixel/p/7078617.html#commentform" title="" class="gray"></a></span>
+                        <span class="article_view"></span>
 					   
 
-                       </a></span><span class="article_view"></span> 
+                        <span class="article_view"></span> 
 					   @endforeach
 					   
 					   <a href="{{url('/home/discusstab')}}">评论</a>

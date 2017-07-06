@@ -115,11 +115,7 @@ class JsonDescriptor extends Descriptor
             'is_required' => $argument->isRequired(),
             'is_array' => $argument->isArray(),
             'description' => preg_replace('/\s*[\r\n]\s*/', ' ', $argument->getDescription()),
-<<<<<<< HEAD
             'default' => INF === $argument->getDefault() ? 'INF' : $argument->getDefault(),
-=======
-            'default' => $argument->getDefault(),
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         );
     }
 
@@ -137,11 +133,7 @@ class JsonDescriptor extends Descriptor
             'is_value_required' => $option->isValueRequired(),
             'is_multiple' => $option->isArray(),
             'description' => preg_replace('/\s*[\r\n]\s*/', ' ', $option->getDescription()),
-<<<<<<< HEAD
             'default' => INF === $option->getDefault() ? 'INF' : $option->getDefault(),
-=======
-            'default' => $option->getDefault(),
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         );
     }
 

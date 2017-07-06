@@ -49,15 +49,8 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
     public function lateCollect()
     {
         if (null !== $this->logger) {
-<<<<<<< HEAD
             $containerDeprecationLogs = $this->getContainerDeprecationLogs();
             $this->data = $this->computeErrorsCount($containerDeprecationLogs);
-=======
-            $this->data = $this->computeErrorsCount();
-
-            $containerDeprecationLogs = $this->getContainerDeprecationLogs();
-            $this->data['deprecation_count'] += count($containerDeprecationLogs);
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
             $this->data['compiler_logs'] = $this->getContainerCompilerLogs();
             $this->data['logs'] = $this->sanitizeLogs(array_merge($this->logger->getLogs(), $containerDeprecationLogs));
             $this->data = $this->cloneVar($this->data);
@@ -118,23 +111,16 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
             return array();
         }
 
-<<<<<<< HEAD
         $bootTime = filemtime($file);
         $logs = array();
         foreach (unserialize(file_get_contents($file)) as $log) {
             $log['context'] = array('exception' => new SilencedErrorContext($log['type'], $log['file'], $log['line'], $log['trace'], $log['count']));
-=======
-        $stubs = array();
-        $bootTime = filemtime($file);
-        $logs = array();
-        foreach (unserialize(file_get_contents($file)) as $log) {
-            $log['context'] = array('exception' => new SilencedErrorContext($log['type'], $log['file'], $log['line']));
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
             $log['timestamp'] = $bootTime;
             $log['priority'] = 100;
             $log['priorityName'] = 'DEBUG';
             $log['channel'] = '-';
             $log['scream'] = false;
+            unset($log['type'], $log['file'], $log['line'], $log['trace'], $log['trace'], $log['count']);
             $logs[] = $log;
         }
 
@@ -171,7 +157,6 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
                 continue;
             }
 
-<<<<<<< HEAD
             $message = $log['message'];
             $exception = $log['context']['exception'];
 
@@ -193,21 +178,13 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
             }
 
             $errorId = md5("{$exception->getSeverity()}/{$exception->getLine()}/{$exception->getFile()}\0{$message}", true);
-=======
-            $exception = $log['context']['exception'];
-            $errorId = md5("{$exception->getSeverity()}/{$exception->getLine()}/{$exception->getFile()}\0{$log['message']}", true);
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
 
             if (isset($sanitizedLogs[$errorId])) {
                 ++$sanitizedLogs[$errorId]['errorCount'];
             } else {
                 $log += array(
                     'errorCount' => 1,
-<<<<<<< HEAD
                     'scream' => false,
-=======
-                    'scream' => $exception instanceof SilencedErrorContext,
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
                 );
 
                 $sanitizedLogs[$errorId] = $log;
@@ -236,14 +213,9 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
         return false;
     }
 
-<<<<<<< HEAD
     private function computeErrorsCount(array $containerDeprecationLogs)
     {
         $silencedLogs = array();
-=======
-    private function computeErrorsCount()
-    {
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         $count = array(
             'error_count' => $this->logger->countErrors(),
             'deprecation_count' => 0,
@@ -266,7 +238,6 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
             }
 
             if ($this->isSilencedOrDeprecationErrorLog($log)) {
-<<<<<<< HEAD
                 $exception = $log['context']['exception'];
                 if ($exception instanceof SilencedErrorContext) {
                     if (isset($silencedLogs[$h = spl_object_hash($exception)])) {
@@ -274,23 +245,16 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
                     }
                     $silencedLogs[$h] = true;
                     $count['scream_count'] += $exception->count;
-=======
-                if ($log['context']['exception'] instanceof SilencedErrorContext) {
-                    ++$count['scream_count'];
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
                 } else {
                     ++$count['deprecation_count'];
                 }
             }
         }
 
-<<<<<<< HEAD
         foreach ($containerDeprecationLogs as $deprecationLog) {
-            $count['deprecation_count'] += $deprecationLog['count'];
+            $count['deprecation_count'] += $deprecationLog['context']['exception']->count;
         }
 
-=======
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
         ksort($count['priorities']);
 
         return $count;

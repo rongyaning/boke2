@@ -337,7 +337,6 @@ class UrlMatcherTest extends TestCase
         $matcher->match('/foo');
     }
 
-<<<<<<< HEAD
     public function testRequestCondition()
     {
         $coll = new RouteCollection();
@@ -348,8 +347,6 @@ class UrlMatcherTest extends TestCase
         $this->assertEquals(array('bar' => 'bar', '_route' => 'foo'), $matcher->match('/foo/bar'));
     }
 
-=======
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
     public function testDecodeOnce()
     {
         $coll = new RouteCollection();

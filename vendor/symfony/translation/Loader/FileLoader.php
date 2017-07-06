@@ -54,11 +54,7 @@ abstract class FileLoader extends ArrayLoader
         return $catalogue;
     }
 
-<<<<<<< HEAD
     /**
-=======
-    /*
->>>>>>> 7821e311558fa509ed52939f62e4b27d3aefcc3b
      * @param string $resource
      *
      * @return array

@@ -25,7 +25,9 @@
             <div id="cnts">
                 <div id="site_nav_top">代码改变世界</div>
                 <div id="login_area">
-                    <span id="span_userinfo"> <?php if(session('User')): ?> <a href=""> <?php echo e(session('User')); ?></a>·<a id="user_nav_blog_link" href="">我的博客</a>·<a href="/home/logout">退出</a> <?php else: ?> [<a href="<?php echo e(URL('home/login')); ?>"> 登陆 </a>·<a href="" onclick="register();return false">注册</a>]</span><?php endif; ?>
+
+                    <span id="span_userinfo"> <?php if(session('User')): ?> <a href=""> <?php echo e(session('User')); ?></a>·<a id="user_nav_blog_link" href="">我的博客</a>·<a href="/home/logout">退出</a> <?php else: ?> [<a href="<?php echo e(URL('home/login')); ?>"> 登陆 </a>·<a href="<?php echo e(url('home/register')); ?>" onclick="register();return false">注册</a>]</span><?php endif; ?>
+
                 </div>
                 
                 <div class="clear"></div>
@@ -83,7 +85,7 @@
                     <h3><a class="titlelnk" href="" target="_blank"><?php echo e($v->title); ?></a></h3>
                     <p class="post_item_summary">
                         <a href="http://www.cnblogs.com/onepixel/" target="_blank">
-                        <img width="48" height="48" class="pfs" src="<?php echo e(asset('imges/20151205235751.png')); ?>" alt=""></a>
+                        <img width="48" height="48" class="pfs" src="<?php echo e(asset('images/20151205235751.png')); ?>" alt=""></a>
                         
                     </p>
                     
@@ -91,13 +93,12 @@
                         <a href="http://www.cnblogs.com/onepixel/" class="lightblue">作者:<?php echo e($v->author); ?></a>
                         发布于:<?php echo e($v->addtime); ?>
 
-                        <span class="article_comment"><a
-                                href="http://www.cnblogs.com/onepixel/p/7078617.html#commentform" title="" class="gray">
-
-                       <?php echo e($v->author); ?></a></span><span class="article_view"></span>
+                        <span class="article_comment">
+                        <a href="http://www.cnblogs.com/onepixel/p/7078617.html#commentform" title="" class="gray"></a></span>
+                        <span class="article_view"></span>
 					   
 
-                       </a></span><span class="article_view"></span> 
+                        <span class="article_view"></span> 
 					   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 					   
 					   <a href="<?php echo e(url('/home/discusstab')); ?>">评论</a>
