@@ -41,12 +41,14 @@ return [
     |
     */
 
-    'disks' => [
+'disks' => [
+
 
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
+
 
         'public' => [
             'driver' => 'local',
@@ -55,6 +57,7 @@ return [
             'visibility' => 'public',
         ],
 
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),
@@ -62,7 +65,8 @@ return [
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
         ],
-	  'qiniu' => [
+        
+        'qiniu' => [
             'driver'  => 'qiniu',
             'domains' => [
                 'default'   => env('QINIU_DOMAINS'), //你的七牛域名
@@ -72,6 +76,7 @@ return [
             'access_key'=> env('QINIU_DOMAIN'),  //AccessKey
             'secret_key'=> env('QINIU_DOMAI'),  //SecretKey
             'bucket'    => env ('QINIU_DOMA'),  //Bucket名字
+
             'notify_url'=> '',  //持久化处理回调地址
         ],
     ],

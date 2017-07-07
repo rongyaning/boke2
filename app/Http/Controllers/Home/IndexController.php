@@ -18,7 +18,7 @@ class IndexController extends Controller
     public function index()
     {
 
-        $art = Article::get();
+        $art = Article::get()->where('status',1);
 		$list = discusstab::get();
 		return view("home.index",['art'=>$art,'list'=>$list]);
 

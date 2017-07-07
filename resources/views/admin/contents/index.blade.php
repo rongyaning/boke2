@@ -29,11 +29,18 @@
          <form class="form-horizontal" action="{{URL('admin/article')}}/{{ $list->id }}" method="post">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   <input type="hidden" name="_method" value="put">
+
                   <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputEmail3"   class="col-sm-2 control-label">ID</label>
+                      <div class="col-sm-4">
+                        <input type="text" name="articleid" readonly class="form-control" value="{{$list->id}}">
+                      </div>
+                    </div>
                     <div class="form-group">
                       <label for="inputEmail3"   class="col-sm-2 control-label">用户id</label>
                       <div class="col-sm-4">
-                        <input type="text" name="articleid" readonly class="form-control" value="{{$list->id}}">
+                        <input type="text" name="articleid" readonly class="form-control" value="{{$list->userid}}">
                       </div>
                     </div>
                    <div class="form-group">
@@ -65,14 +72,14 @@
                       <label for="inputPassword3" class="col-sm-2 control-label">当前状态</label>
                       <div class="col-sm-4">
                         <label class="radio-inline">
-                          <input type="radio" name="status" id="inlineRadio1" value="0"> 通过
+                          <input type="radio" name="status" id="inlineRadio1" value="0"> 待审核
                         </label>
                         <label class="radio-inline">
-                          <input type="radio" name="status" id="inlineRadio2" value="1"> 未通过
+                          <input type="radio" name="status" id="inlineRadio2" value="1"> 通过
                         </label>
                           <label class="radio-inline">
                           <input btn btn-primary type="radio" name="status"   id="inlineRadio2" value="2"> 
-                          待审核
+                          未通过
                         </label>
                       </div>
                     </div>
