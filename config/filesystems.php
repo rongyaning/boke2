@@ -71,7 +71,7 @@ return [
              ],
             'access_key'=> env('QINIU_DOMAIN'),  //AccessKey
             'secret_key'=> env('QINIU_DOMAI'),  //SecretKey
-            'bucket'    => 'gaohaiwei',  //Bucket名字
+            'bucket'    => env ('QINIU_DOMA'),  //Bucket名字
             'notify_url'=> '',  //持久化处理回调地址
         ],
     ],

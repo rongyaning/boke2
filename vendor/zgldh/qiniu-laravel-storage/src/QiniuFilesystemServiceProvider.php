@@ -38,8 +38,7 @@ class QiniuFilesystemServiceProvider extends ServiceProvider
                     $config['secret_key'],
                     $config['bucket'],
                     $domains,
-                    $config['notify_url'] ? $config['notify_url'] : null,
-                    $config['access'] ? $config['access'] : 'public'
+                    $config['notify_url'] ? $config['notify_url'] : null
                 );
                 $file_system = new Filesystem($qiniu_adapter);
                 $file_system->addPlugin(new PrivateDownloadUrl());

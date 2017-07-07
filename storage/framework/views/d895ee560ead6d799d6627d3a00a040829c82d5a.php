@@ -25,8 +25,10 @@
             <div id="cnts">
                 <div id="site_nav_top">代码改变世界</div>
                 <div id="login_area">
-                    <span id="span_userinfo">[<a href="<?php echo e(URL('home/login')); ?>">登录</a>·<a href="<?php echo e(url('home/register')); ?>">注册
-			<span id="msg_count"></span></a>]</span>
+
+                    <span id="span_userinfo"> <?php if(session('User')): ?> <a href=""> <?php echo e(session('User')); ?></a>·<a  href="<?php echo e(url('home/list')); ?>">我的博客</a>·<a href="/home/logout">退出</a> <?php else: ?> [<a href="<?php echo e(URL('home/login')); ?>"> 登陆 </a>·<a href="<?php echo e(url('home/register')); ?>" >注册</a>]</span><?php endif; ?>
+
+
                 </div>
                 
                 <div class="clear"></div>
@@ -34,10 +36,7 @@
             </div>
         </div> 
 
-    </div>
-    
-    
-    
+    </div> 
     <div id="header">
         <p class="h_r_3"></p>
         <p class="h_r_2"></p>
@@ -82,9 +81,9 @@
         <div id="post_list_tips" class="hide"></div>
 
         <div id="post_list">
-              <?php $__currentLoopData = $art; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <?php $__currentLoopData = $art; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ve): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="post_item_body">
-                    <h3><a class="titlelnk" href="http://www.cnblogs.com/onepixel/p/7078617.html" target="_blank"><?php echo e($v->title); ?></a></h3>
+                    <h3><a>标题:<?php echo e($ve->title); ?></a></h3>
                     <p class="post_item_summary">
                         <a href="http://www.cnblogs.com/onepixel/" target="_blank">
                         <img width="48" height="48" class="pfs" src="<?php echo e(asset('images/20151205235751.png')); ?>" alt=""></a>
@@ -92,19 +91,19 @@
                     </p>
                     
                     <div class="post_item_foot">
-                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue">作者:<?php echo e($v->author); ?></a>
-                        发布于:<?php echo e($v->addtime); ?>
+                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue">作者:<?php echo e($ve->author); ?></a>
+                        发布于:<?php echo e($ve->addtime); ?>
 
                         <span class="article_comment"><a
                                 href="http://www.cnblogs.com/onepixel/p/7078617.html#commentform" title="" class="gray">
 
-                       <?php echo e($v->author); ?></a></span><span class="article_view"></span>
-					   
+                       </a></span><span class="article_view"></span>
+					    <a href="<?php echo e(url('/home/discusstab')); ?>/<?php echo e($ve->id); ?>">查看详情</a>
 
                        </a></span><span class="article_view"></span> 
 					   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 					   
-					   <a href="<?php echo e(url('/home/discusstab')); ?>">评论</a>
+					  
 					    
 
 					   </div>
@@ -429,7 +428,5 @@
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

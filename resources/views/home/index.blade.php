@@ -26,7 +26,7 @@
                 <div id="site_nav_top">代码改变世界</div>
                 <div id="login_area">
 
-                    <span id="span_userinfo"> @if(session('User')) <a href=""> {{session('User')}}</a>·<a id="user_nav_blog_link" href="">我的博客</a>·<a href="/home/logout">退出</a> @else [<a href="{{URL('home/login')}}"> 登陆 </a>·<a href="{{url('home/register')}}" onclick="register();return false">注册</a>]</span>@endif
+                    <span id="span_userinfo"> @if(session('User')) <a href=""> {{session('User')}}</a>·<a  href="{{url('home/list')}}">我的博客</a>·<a href="/home/logout">退出</a> @else [<a href="{{URL('home/login')}}"> 登陆 </a>·<a href="{{url('home/register')}}" >注册</a>]</span>@endif
 
 
                 </div>
@@ -81,9 +81,9 @@
         <div id="post_list_tips" class="hide"></div>
 
         <div id="post_list">
-              @foreach ($art as $v)
+              @foreach ($art as $ve)
                 <div class="post_item_body">
-                    <h3><a class="titlelnk" href="" target="_blank">{{$v->title}}</a></h3>
+                    <h3><a>标题:{{$ve->title}}</a></h3>
                     <p class="post_item_summary">
                         <a href="http://www.cnblogs.com/onepixel/" target="_blank">
                         <img width="48" height="48" class="pfs" src="{{asset('images/20151205235751.png')}}" alt=""></a>
@@ -91,18 +91,18 @@
                     </p>
                     
                     <div class="post_item_foot">
-                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue">作者:{{$v->author}}</a>
-                        发布于:{{$v->addtime}}
+                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue">作者:{{$ve->author}}</a>
+                        发布于:{{$ve->addtime}}
                         <span class="article_comment"><a
                                 href="http://www.cnblogs.com/onepixel/p/7078617.html#commentform" title="" class="gray">
 
-                       {{$v->author}}</a></span><span class="article_view"></span>
-					   
+                       </a></span><span class="article_view"></span>
+					    <a href="{{url('/home/discusstab')}}/{{$ve->id}}">查看详情</a>
 
                        </a></span><span class="article_view"></span> 
 					   @endforeach
 					   
-					   <a href="{{url('/home/discusstab')}}">评论</a>
+					  
 					    
 
 					   </div>

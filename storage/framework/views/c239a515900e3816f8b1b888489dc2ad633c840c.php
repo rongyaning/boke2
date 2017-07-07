@@ -56,38 +56,21 @@
 		</h1>
 		<div class="clear"></div>
 		<div class="postBody">
-			<div id="cnblogs_post_body"><hr>
-
-<hr>
-
-<div>
-
-<?php $__currentLoopData = $art; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-	标题:<?php echo e($v->title); ?><br/>
-	作者:<?php echo e($v->author); ?><br/>
-	
-	发布于:<?php echo e($v->addtime); ?><br/>
-	
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-<?php $__currentLoopData = $ar; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-内容:<?php echo e($v->content); ?><br/>
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
-
-
-
-</div>
-
-
-<form action="<?php echo e(url('home/discusstab')); ?>" method="post" >
+			<div id="cnblogs_post_body">
+<form action="<?php echo e(url('home/discusstab')); ?>" method="post" id="dd">
 <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
-<input type="hidden" name="articleid" value="<?php echo e($v->title); ?>">
+<?php $__currentLoopData = $art; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ve): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<input type="hidden" name="articleid" value="<?php echo e($ve->id); ?>">
+<input type="hidden" name="articleid" value="<?php echo e($ve->title); ?>">
 
+	标题:<?php echo e($ve->title); ?><br/>
+	作者:<?php echo e($ve->author); ?><br/>
+	发布于:<?php echo e($ve->addtime); ?><br/>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<?php $__currentLoopData = $ar; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+内容:<?php echo e($v->content); ?>
 
-
-
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 <div id="EntryTag"></div>
 <div id="blog_post_info"><div id="green_channel">
         <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(7100336,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
@@ -96,64 +79,42 @@
     <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="<?php echo e(url('images/icon_weibo_24.png')); ?>" alt=""></a>
     <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="<?php echo e(url('images/wechat.png')); ?>" alt=""></a>
 </div>
-
-
 </div>	
 <div class="clear"></div>
-
 </div>
-
-
-		</div>
-		
-	</div>
-	
-	
+</div></div>	
 </div><!--end: topics 文章、评论容器-->
 </div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
 <div id="comment_form" class="commentform">
 <a name="commentform"></a>
 <div id="divCommentShow"></div>
-<div id="comment_nav"><span id="span_refresh_tips"></span><a href="<?php echo e(url('/home/discusstab')); ?>">刷新评论</a><a href="<?php echo e(url('/home/discusstab')); ?>">刷新页面</a><a href="">返回顶部</a></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="">刷新评论</a><a href="">刷新页面</a><a href="">返回顶部</a>
+</div>
 <div id="comment_form_container">
-
 <div id="commentform_title">发表评论</div>
 <span id="tip_comment" style="color:Red"></span>
 <p>
-昵称：<input type="text" id="tbCommentAuthor" class="author" disabled="disabled" size="50" value="<?php echo e($js->uname); ?> ">
+昵称：<input type="text" id="tbCommentAuthor" class="author" disabled="disabled" size="50" value="<?php echo e(session('User')); ?> ">
 </p>
 <div class="commentbox_main" style="float:left">
 <div class="commentbox_title">
 <div class="commentbox_title_left">  评论内容：</div>
-
 </div>
 <div class="clear" ></div>
+
 <textarea id="tbCommentBody" name="content" class="comment_textarea"></textarea>
-
-
-
 <textarea id="tbCommentBody" class="comment_textarea" readonly> 
 <?php $__currentLoopData = $list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-昵称:<?php echo e($js->uname); ?> 
+昵称:<?php echo e(session('User')); ?>	
 <?php echo e($vo->content); ?>                 
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
 </textarea>
-
 </div>
-
 <p id="commentbox_opt" style="float:left">
 <button><a href="<?php echo e(url('home')); ?>">退出</a></button>
-
-<input type="submit" value="提交">
+<input type="submit" id="dd" value="提交">
 </p>
 </form> 
-
-
-<div >
-
-
-</div>
-
 </div>
 
 <script type="text/javascript">
@@ -190,7 +151,7 @@
 
 <div class="newsItem">
 <h3 class="catListTitle">公告</h3>
-	<div id="blog-news"></a><div id="profile_block">昵称：<?php echo e($js->uname); ?><br>园龄：</div></div>
+	<div id="blog-news"></a><div id="profile_block">昵称：<?php echo e(session('User')); ?><br></div></div>
 </div>
 
 			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">

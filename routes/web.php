@@ -15,14 +15,10 @@
 
 
 
-
 Route::get('/home/login',"Home\LoginController@login");//加载前台登录界面
 Route::post('/home/dologin',"Home\LoginController@doLogin"); //执行前台登录
 Route::get('/home/logout',"Home\LoginController@logout"); //执行退出
 Route::get('/home/getcode',"Home\LoginController@getCode");//加载验证码
-//Route::get('/home/register',"Home\RegisterController@register");//加载前台注册页面
-//Route::get('/home/user',"Home\UserController@index");//加载前台注册页面
-//Route::get('/home/user',"Home\UserController@Alidayu");//加载前台注册页面
 
 
 
@@ -32,8 +28,7 @@ Route::post('/admin/dologin',"Admin\LoginController@doLogin"); //执行后台登
 Route::get('/admin/logout',"Admin\LoginController@logout"); //执行退出
 Route::get('/admin/getcode',"Admin\LoginController@getCode");//加载验证码
 
-//Route::get('/home/discusstab',"Home\DiscusstabController@index");//前台评论表管理
-//Route::get('/home/discusstab',"Home\DiscusstabController@store");//前台评论表管理
+
 //建立前台路由组  
 Route::group(['prefix' => 'home','middleware' => 'home'], function () {
 	Route::get('/',"Home\IndexController@index");//加载前台首页模板
@@ -48,14 +43,12 @@ Route::group(['prefix' => 'home','middleware' => 'home'], function () {
     Route::get('personal',"Home\PersonalController@index");//加载前台个人中心
     Route::get('personal/edit',"Home\PersonalController@update");//加载前台个人中心修改界面
     Route::get('personal/create',"Home\PersonalController@store");//加载前台个人中心添加界面
-	Route::resource('discusstab',"Home\DiscusstabController");//前台评论表管理
-	Route::resource('register',"Home\RegisterController");//前台评论表管理
-	//Route::resource('user',"Home\UserController");//加载注册页
+	
+	Route::resource('discusstab',"Home\DiscusstabController");//评论管理
+	
+	Route::resource('register',"Home\RegisterController");//注册表管理
+	
 });
-
-
-
-
 //建立后台路由组
 Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
 
@@ -90,3 +83,10 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
 
 });
 
+
+
+
+
+//上传图片
+Route::get('/file','Home\UploadController@index');
+Route::post('/upload/Upload','Home\UploadController@UploadFile');

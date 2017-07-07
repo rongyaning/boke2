@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>冯强0_0 - 博客园</title>
+		<title>博客园</title>
 		<link type="text/css" rel="stylesheet" href="{{asset('css/blog-common.css')}}">
 		<link id="MainCss" type="text/css" rel="stylesheet" href="{{asset('css/bundle-SimpleMemory.css')}}">
 		<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="{{asset('css/bundle-SimpleMemory-mobile.css')}}">
@@ -25,7 +25,7 @@
 			<!--<a id="lnkBlogLogo" href="http://www.cnblogs.com/fnxz/"><img id="blogLogo" src="{{asset('images/logo.gif')}}" alt="返回主页"></a>-->
 				
 		<!--done-->
-		<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="{{url('home/personal')}}">冯强0_0</a></h1>
+		<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="{{url('home/personal')}}"></a></h1>
 		<h2></h2>
 			</div><!--end: blogTitle 博客的标题和副标题 -->
 		<div id="navigator">

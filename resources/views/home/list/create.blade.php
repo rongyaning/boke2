@@ -31,7 +31,7 @@
 									<td id="Header" colspan="2">
 										<div id="SiteNav"><a href="http://www.cnblogs.com/Skins.aspx" target="_blank">模板</a></div>
 										<div id="BlogTitle">
-											<a id="BlogTitleLink" href="http://www.cnblogs.com/fnxz/">冯强0_0</a>
+											<a id="BlogTitleLink" href="http://www.cnblogs.com/fnxz/"></a>
 										</div>
 										<div id="SiteTitle">
 											<a id="TitleLink" href="http://www.cnblogs.com/"><img src="{{asset('homes/images/adminlogo.gif')}}" alt=""></a>

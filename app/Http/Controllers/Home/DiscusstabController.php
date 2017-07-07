@@ -5,7 +5,9 @@ use App\Model\Article;
 use App\Model\contents;
 use App\Model\discusstab;
 use App\Model\log;
+use App\Model\Redirect;
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 
 class DiscusstabController extends Controller
@@ -17,21 +19,7 @@ class DiscusstabController extends Controller
      */
     public function index()
     {
-        //
-		$art = Article::get();	
-		
-		$ar = contents::get();
-		
-		$list = discusstab::where('status', 2)->get();
-		
-		
-		$js = \DB::table("log")->get()->first();
-		
-		//print_r($list);die();
-		return view("home.discusstab.index",['art'=>$art,'ar'=>$ar,'list'=>$list,"js"=>$js]);
-		
-		 
-		
+		//$ss = 
     }
 
     /**
@@ -51,27 +39,8 @@ class DiscusstabController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $db = new Discusstab;
-       //获取要添加的数据
-        $data = $request->only("content","articleid","disTime");
-        $data["status"]=1;
-		//$date["disTime"]= 'Y-m-d H:i:s';
-		 //$data('Y-m-d H:i:s',["disTime"]=time);  
-		//print_r(data);
-        //print_r($date);die;
-        //执行添加
-        $id = $db->insertGetId($data);
-        //判断
-        if($id>0){
-         echo  $info = "类别信息添加成功！";
-        }else{
-         echo  $info = "类别信息添加失败！";
-        }
-        return redirect('/home/discusstab'); 
-    }
-
+    
+	
     /**
      * Display the specified resource.
      *
@@ -79,13 +48,42 @@ class DiscusstabController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-		//$js = \DB::table("userinfo")->get('id',$id)->first();
-        //$list =  discusstab::get();
-		//return view("home.discusstab.index",["js"=>$js]);
+	{
+		$art = Article::where("userid","=",$id)->get();
+		//$eee = 
+		/* echo "<pre>";
+		print_r($art);die(); */
 		
+		$ar = contents::where("userid","=",$id)->get();	
+		//$ars = discusstab::where("userid","=",$id)->get();	
+			
+		$list = discusstab::where('status', 2)->get();
+		
+		
+		//$js = \DB::table("user")->where("id")->first();
+		
+		//print_r($list);die();
+		return view("home.discusstab.show",['art'=>$art,'ar'=>$ar,'list'=>$list]);	
     }
-
+	public function store(Request $request)
+    {	
+        $db = new Discusstab;
+        
+		//$art = article::find(1);
+       //获取要添加的数据
+	   
+        $data = $request->only("content","articleid","disTime");
+        $data["status"]=1;
+		$id = $db->insertGetId($data);
+        //判断
+        if($id>0){
+         echo  $info = "类别信息添加成功！";
+        }else{
+         echo  $info = "类别信息添加失败！";
+        }
+		return redirect("home"); 	
+    }
+	
     /**
      * Show the form for editing the specified resource.
      *
