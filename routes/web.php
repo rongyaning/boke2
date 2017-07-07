@@ -13,9 +13,6 @@
 
 
 
-
-
-
 Route::get('/home/login',"Home\LoginController@login");//加载前台登录界面
 Route::post('/home/dologin',"Home\LoginController@doLogin"); //执行前台登录
 Route::get('/home/logout',"Home\LoginController@logout"); //执行退出
@@ -89,4 +86,12 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     //Route::post('adminer/add',"Admin\AdminerController@create");//管理员
 
 });
+
+Route::get('/upload', 'UploadController@index');
+
+
+Route::post('/upload/put', 'UploadController@uploads');
+//七牛云测试
+Route::get('/file','Home\UploadController@index');
+Route::post('/upload/Upload','Home\UploadController@UploadFile');
 

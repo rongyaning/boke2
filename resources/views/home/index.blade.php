@@ -26,7 +26,7 @@
                 <div id="site_nav_top">代码改变世界</div>
                 <div id="login_area">
 
-                    <span id="span_userinfo"> @if(session('User')) <a href=""> {{session('User')}}</a>·<a id="user_nav_blog_link" href="">我的博客</a>·<a href="/home/logout">退出</a> @else [<a href="{{URL('home/login')}}"> 登陆 </a>·<a href="{{url('home/register')}}" onclick="register();return false">注册</a>]</span>@endif
+                    <span id="span_userinfo"> @if(session('User')) <a href=""> {{session('User')}}</a>·<a id="user_nav_blog_link" href="{{url('home/list')}}">我的博客</a>·<a href="/home/logout">退出</a> @else [<a href="{{URL('home/login')}}"> 登陆 </a>·<a href="{{url('home/register')}}" onclick="register();return false">注册</a>]</span>@endif
 
                 </div>
                 

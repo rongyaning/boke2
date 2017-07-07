@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Article;
 use App\Model\Contents;
+use App\Model\Userinfo;
 
 class ListController extends Controller
 {
@@ -41,8 +42,24 @@ class ListController extends Controller
     public function store(Request $request)
     {
         //
-        $input = $request->get();
-        print_r($input);
+       //获取传过来的字段信息
+        $info = $request->only('title','author','content');
+        print_r($info);die();
+        //将内容插入contents表并获取自增id号 
+        $id = \DB::table("contents")->insertGetId($info);
+        //var_dump($list);die();
+        //print_r($id);die;
+        // 实例化表并将字段信息插入$info2;
+        $data = new Article;
+        $info2 = $request->only('title','author');
+        $info2['cid'] = $id;
+        //print_r($info2);die;
+        //$info4 = $request->only('author');
+        //\DB::table("article")->insertGetId($info2);
+        //添加到Article中
+         $data->insert($info2);
+        
+        return view("home.detail.store");
     }
 
     /**

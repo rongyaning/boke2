@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Contents;
 use App\Model\Article;
+use App\Model\User;
 
 
 class DetailController extends Controller
@@ -17,8 +18,9 @@ class DetailController extends Controller
      */
     public function index()
     {
-        //
+        //获取Article的数据
 		$list = Article::get();
+        //返回试图并遍历数据
         return view("home.detail.index",['list'=>$list]);
     }
 
@@ -42,21 +44,25 @@ class DetailController extends Controller
     public function store(Request $request)
     {
         //获取传过来的字段信息
-        $info = $request->only('title','author','content');
-        //将内容插入contents表并获取自增id号 
+        $info = $request->only('userid','title','author','content');
+     
+        //获取得到session里储存的登录信息
+        $list =\DB::table('user')->where('account',session("User"))->first();
+        //将session里获取的id赋给传过来的userid;
+        $info['userid'] = $list->id;
+        //向contents表里添加数据并获取表的id
         $id = \DB::table("contents")->insertGetId($info);
-        //var_dump($list);die();
-        //print_r($id);die;
-        // 实例化表并将字段信息插入$info2;
+        //实例Article表
         $data = new Article;
+        //获取传过来的标题，作者字段
         $info2 = $request->only('title','author');
+        //让contents的id等于$info2里的 cid,字段，userid字段等于session里的id字段
         $info2['cid'] = $id;
-        //print_r($info2);die;
-        //$info4 = $request->only('author');
-        //\DB::table("article")->insertGetId($info2);
-        //添加到Article中
-         $data->insert($info2);
-        
+
+        $info2['userid'] =$list->id;
+        //$info2的数据添加到 Article
+        $data->insert($info2);
+        //返回视图
         return view("home.detail.store");
     }
 

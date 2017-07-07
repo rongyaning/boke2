@@ -25,13 +25,8 @@ class ArticleController extends Controller
            $db->where("author","like","%{$_GET['author']}%");
            $params['author'] = $_GET['author']; //维持搜索条件
        }
-       
        // $list = $db->get(); //获取全部
        $list = $db->orderBy("id",'desc')->paginate(5); //5条每页浏览
-        
-       //return view("admin.discusstab.index",['list'=>$list,'params'=>$params]);
-        //$list = Article::get();
-        
         return view("admin.Article.index",['list'=>$list,'params'=>$params]);
     }
 

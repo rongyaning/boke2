@@ -11,7 +11,7 @@
             <script type="text/javascript" src="{{asset('homes/js/admin.js.下载')}}"></script>
 	</head>	
 	<body id="Articles">
-		<form method="post" action="https://i.cnblogs.com/PostDone.aspx?postid=7111318&amp;actiontip=%e5%8f%91%e5%b8%83%e6%88%90%e5%8a%9f" id="frmMain">
+		<form method="post" action="" id="frmMain">
 <div class="aspNetHidden">
 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="kRDuHwfoaR7qAQEN+rvh5W3zTnWNPdU1majwIMEneR19sMYACaeSWwcH6iXZi66oX8K3jkKcrmpSC0RIX9jwEzwGxCbKj+6l6g35iI7f0GnxIJw3i2Kkvbdj/DayBYrOKVELoyzSLuvsivzPWVckdhCTRt6RtLgAMBgYvZyAcQRmmKa7RfPz/BUgyUwBlap0m6zQXQur8GpyF5QhIEx59Ab3crajiWpCIb40+w+WZE4uP4c3sSlTkm8bcQUexJCv4BEeeDRNNHUM8jM3UJ5Y+Vwc4RmsnGNwP/sZ3f2/WpBOaRS2PoqPB0e0RPPjNNXq/OhlMQUoCs3pXJROFuuftVB8dPOcSSyT7KEeTSJyotiV+Bm8l29kQ4JiofG7s08/BeEmN2MjJKEewmOhINlCyM9+Bo4Jk85SYOx4PZ/vgYn/1cuyWFqIYlrcNs2jWPZrr3lJw/vHqWTf3TLszVQig8iC/4SIrnGh84v3Z/AvU0ayf8qU6xe3xwea+B53w0O7rfAU5Z3qSUmEXCUq0FtSBqu/b4n4w/KtglenTGmbZ4SAmXKgtONs75jigsRvnirUObAPnRbO81sz/79xkV3xhm4xBrmx7bIATZ1RGHO5Jh/x7PNU0fAW2d8noOftPTzY/38StxTiaLFqynjsw2i4c5Jb8yP9Yka6icDqE5J8N7qfbSDvyvYulSHElcWDjfqltQbJ2peWxLm6yVlxqfLQ+2Eo0YPutEgdoKys8xs3MMpkGyZ74eZjs+iOck/lsUzX2fT8dQkUT2PxiUUwdhmyanzXwOxpBK7UFV9yW1hBhWDqWS3MfGZ0X1Z9FZpojnfeT31IFxBoj7GjpU/9As4SQdO7hcn+seMpBLw4pVn2do+i6U/EKfvJl7Pm7T7mIvj3d6Fxm8eat5EmzMaXVy3O0vHetMz7pZJiGm6rOgLWHdxFgNrY7OpeFzhNXFF8NlleNv0t9y3GS2ZHhqlyXNZdYQU4U5h9/TyLhU+NjnvoBJsId7J1Ok4KtFFbwZOoSaqbuPs1Hs59KKGjlyGAfvmOYr1JDNVZ+0wiyinN7SyARiiKkDIDRjr4qn/+cxrl7plQ+N55UlQUN0m5d8YNhzr6NoVqjBawUQIOQiZy9u8MmBKOgoZj/qSIqLcB6wBcPc25J0cs78+d96RZuo57bmYJyFUiP7o59NMcmmDLS31yZInh1letcc2KLuaTbCS0lPdvirevDjPr99mWsg83fbGCkzaAdWGJv2DTBMtKWkBQRa+mYbJTAWUA5NBjLQGMMHBbok8G6C0nHS10CgFO9dXrle2w/lcO6J2jwnZKEcaTPb2KsOkKXbRdy6o1k/o4c8r+PrZR3S8ODuYQydUtBQiK+WtR4lkO5iFUFlzebBCsghsM1ukJCNi0DmqogQnxRd5HZJFscQs1F/gbnJXHpKklUxHDsomQPmEUyUU0cPRJ42s2A5bjjlVdRhg6F/9jiAYlPrBlQQXqR4vduPkoE8tD0NHmqEfJDnwkhGdVWVzgq10mEVFr9fLrK9yQd1gKEFB9zVIG6rIkDE1r5afcohPyEbGUTxuMGCO/xEX3tiE8aNFuec2PlqinU1TN2WZFyU2cXeT83Q==">
 </div>
@@ -25,7 +25,7 @@
 						<div id="BlogTitle"><a id="BlogTitleLink" href="http://www.cnblogs.com/ryn521/">花沐</a>
 						</div>
 						<div id="SiteTitle">
-							<a id="TitleLink" href="http://www.cnblogs.com/"><img src="./博客后台管理 - 博客园_files/adminlogo.gif" alt=""></a>
+							<a id="TitleLink" href="http://www.cnblogs.com/"><img src="{{asset('homes/images/adminlogo.gif')}}" alt=""></a>
 						</div>
 					</td>
 				</tr>
@@ -61,7 +61,10 @@
 				<tr>
 					<td class="NavLeftCell">						
 						<div class="left_nav">
-							<ul id="LinksActions"><li><a href="">» 添加新文章</a></li></ul>
+							<ul id="LinksActions"><li><a href="{{url('home/detail/create')}}">» 添加新文章</a></li></ul>
+							<ul id="LinksActions"><li><a href="">» 已通过的文章</a></li></ul>
+							<ul id="LinksActions"><li><a href="">» 未通过的文章</a></li></ul>
+							<ul id="LinksActions"><li><a href="">» 正在审核的文章</a></li></ul>
 						</div>
 						
 						<div class="left_nav">
@@ -81,9 +84,9 @@
     </div>
 	<div id="TipsPanel" class="Edit">
 	
-        <p>文章标题：<a id="link_post_title" class="link-post-title" href="http://www.cnblogs.com/ryn521/articles/7111318.html"></a></p>
-        <p><a id="TipsPanel_LinkEdit" href="https://i.cnblogs.com/EditArticles.aspx?postid=7111318">» 继续编辑</a></p>
-        <p><a href="https://i.cnblogs.com/">» 后台首页</a></p>
+        <p>文章标题：<a id="link_post_title" class="link-post-title" href=""></a></p>
+        <p><a id="TipsPanel_LinkEdit" href="{{url('home/detail')}}">» 继续编辑</a></p>
+        <p><a href="{{url('home/detail')}}">» 后台首页</a></p>
 
     
     </div>

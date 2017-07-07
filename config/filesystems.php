@@ -41,12 +41,14 @@ return [
     |
     */
 
-    'disks' => [
+'disks' => [
+
 
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
+
 
         'public' => [
             'driver' => 'local',
@@ -55,6 +57,7 @@ return [
             'visibility' => 'public',
         ],
 
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),
@@ -62,16 +65,17 @@ return [
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
         ],
-	  'qiniu' => [
+        
+        'qiniu' => [
             'driver'  => 'qiniu',
             'domains' => [
-                'default'   => env('QINIU_DOMAINS'), //你的七牛域名
-                'https'     => '',         //你的HTTPS域名
-                'custom'    => '',     //你的自定义域名
-             ],
-            'access_key'=> env('QINIU_DOMAIN'),  //AccessKey
-            'secret_key'=> env('QINIU_DOMAI'),  //SecretKey
-            'bucket'    => 'gaohaiwei',  //Bucket名字
+            'default'   => 'oslg54zio.bkt.clouddn.com', //你的七牛域名
+            'https'     => '',         //你的HTTPS域名
+            'custom'    => '',                //你的自定义域名
+         ],
+            'access_key'=> 'VqLJtZw3JHaloLYfsIozalGtRUbQBm7DTMeCDWgV',  //AccessKey
+            'secret_key'=> 'eJlfMm4imSSQRgYO1oHwD20EEtGg6hNr-HhROhof',  //SecretKey
+            'bucket'    => 'fqcc',  //Bucket名字
             'notify_url'=> '',  //持久化处理回调地址
         ],
     ],

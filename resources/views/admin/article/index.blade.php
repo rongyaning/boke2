@@ -40,7 +40,7 @@
                       <th>标题</th>
                       <th>作者</th>
                       <th>头像</th>
-					  <th>文章类型</th>
+					            <th>文章类型</th>
                       <th>发布时间</th>
                       <th>状态</th>
                       <th>操作</th>
@@ -55,7 +55,7 @@
                       <td>{{$v->picname}}</td>
                       <td>{{$v->articleType}}</td>
                       <td>{{$v->addtime}}</td>
-                      <td class="btn btn-primary btn-xs">@if ($v->status=='0')已通过 @elseif ($v->status=='1')未通过 @else ($v->status=='2')待审核 @endif</td>
+                      <td class="btn btn-primary btn-xs">@if ($v->status=='0')待审核 @elseif ($v->status=='1')通过 @else ($v->status=='2')未通过 @endif</td>
         
                       <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button>
                       <button class="btn btn-xs btn-primary" onclick="window.location='{{URL('admin/article')}}/{{$v->cid}}/edit'">查看内容详情</button> 
